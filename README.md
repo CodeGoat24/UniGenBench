@@ -17,6 +17,13 @@ Hunyuan, Tencent & [UnifiedReward](https://github.com/CodeGoat24/UnifiedReward) 
 
 </div>
 
+## 🔥 News
+😊 We are actively gathering feedback from the community to improve our benchmark. **We welcome your input and encourage you to stay updated through our repository**!!
+
+Please leave us a star ⭐ if you find our benchmark helpful.
+- [2025/9] 🔥🔥 **GPT-4o**, **Imagen-4-Ultra**, **Nano Banana**, **Seedream-3.0**, **Qwen-Image**, **FLUX-Kontext-[Max/Pro]** are added to the 🏅[leaderboard](https://huggingface.co/spaces/CodeGoat24/UniGenBench_Leaderboard).
+- [2025/8] 🔥🔥 We release [paper](https://arxiv.org/pdf/2508.20751), [project page](https://codegoat24.github.io/UnifiedReward/Pref-GRPO), and UniGenBench [leaderboard](https://huggingface.co/spaces/CodeGoat24/UniGenBench_Leaderboard).
+
 ## Introduction
 
 We propose <b>UniGenBench</b>, a unified and versatile benchmark for image generation that integrates diverse prompt themes with a comprehensive suite of fine-grained evaluation criteria. 
