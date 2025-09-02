@@ -11,9 +11,10 @@ Hunyuan, Tencent & [UnifiedReward](https://github.com/CodeGoat24/UnifiedReward) 
 <a href="https://codegoat24.github.io/UnifiedReward/Pref-GRPO">
 <img src='https://img.shields.io/badge/Project-Website-orange' alt='Project Page'></a>
 
-[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-yellow)](https://huggingface.co/CodeGoat24/FLUX.1-dev-PrefGRPO) [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Leaderboard-yellow)](https://huggingface.co/spaces/CodeGoat24/UniGenBench_Leaderboard)
+[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-yellow)](https://huggingface.co/CodeGoat24/FLUX.1-dev-PrefGRPO) 
+[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Eval_Images-yellow)](https://huggingface.co/datasets/CodeGoat24/UniGenBench-Eval-Images)
 
-
+[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20UniGenBench%20-Leaderboard-yellow)](https://huggingface.co/spaces/CodeGoat24/UniGenBench_Leaderboard)
 
 </div>
 
