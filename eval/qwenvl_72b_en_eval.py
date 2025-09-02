@@ -28,7 +28,7 @@ def local_image_to_data_url(image_path):
     return f"data:{mime_type};base64,{base64_encoded_data}"
 
 def call_evaluation(args, api_url):
-    index, prompt, testpoint, test_desc, model, img_path = args
+    index, prompt, testpoint, test_desc, img_path = args
 
     explanation_dict = {
         "Relationship - Comparison": "Comparison of attributes between two entities",
@@ -201,7 +201,7 @@ def main(data_path: str, api_url: str, csv_file: str):
             if not os.path.exists(img_path):
                 raise()
                     
-            args.append((index, prompt, test_point, test_desc, model, img_path))
+            args.append((index, prompt, test_point, test_desc, img_path))
 
 
     pool = Pool(processes=20)
