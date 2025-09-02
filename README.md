@@ -93,6 +93,14 @@ The file naming follows the pattern `promptID_imageID.png`
 
 
 ## ✨ Evaluation with Gemini2.5-pro
+We are using the API version:
+
+> **gemini-2.5-pro**:
+>
+> Release stage: General Availability (GA)
+>
+> Release date: June 17, 2025
+>
 ### 1. Evaluation
 ```
 #!/bin/bash
