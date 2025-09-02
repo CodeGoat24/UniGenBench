@@ -84,9 +84,6 @@ class VLMessageClient:
                 output = response.json()["choices"][0]["message"]["content"]
                 
 
-                with lock:
-                    total_counter.value += 1
-
                 item['model_output'] = output
                 item['success'] = True
                 result = item
@@ -111,49 +108,36 @@ class VLMessageClient:
 
 
 def evaluate_batch(batch_data, api_url, image_root=None):
-    with Manager() as manager:
-        total_counter = manager.Value('i', 0) 
-        lock = manager.Lock()
-        total_result = []
+    total_result = []
+    client = VLMessageClient(api_url)
 
-        with concurrent.futures.ProcessPoolExecutor(max_workers=16) as executor:
-            futures = []
-            client = VLMessageClient(api_url)
-            index = 0
-            for item in batch_data:
-                if 'idx' not in item:
-                    item['idx'] = str(index)
-                    index += 1
-                futures.append(
-                    executor.submit(
-                        client.process_item,
-                        item=item,
-                        image_root=image_root,
-                        output_file='./results.json',
-                        total_counter=total_counter,
-                        lock=lock
-                    )
+    from tqdm import tqdm
+    index = 0
+    with tqdm(total=len(batch_data), desc="vLLM inference") as pbar:
+        for item in batch_data:
+            if 'idx' not in item:
+                item['idx'] = str(index)
+                index += 1
+            try:
+                result, _ = client.process_item(
+                    item=item,
+                    image_root=image_root,
+                    output_file='./results.json',
+                    total_counter=None,  
+                    lock=None           
                 )
-            
-            from tqdm import tqdm
-            with tqdm(total=len(batch_data), desc="vLLM inference") as pbar:
-                for future in concurrent.futures.as_completed(futures):
-                    
-                    try:
-                        result, _ = future.result()
-                        total_result.append(result)
-                    except Exception as e:
-                        print(f"Error: {str(e)}")
-                    finally:
-                        pbar.update(1)
-                        current_total = total_counter.value
-                        processed_info = f"{current_total}/{len(batch_data)}"
-                        pbar.set_postfix({
-                            "processed": processed_info
-                        })
+                total_result.append(result)
+            except Exception as e:
+                print(f"Error: {str(e)}")
+            finally:
+                pbar.update(1)
+                processed_info = f"{len(total_result)}/{len(batch_data)}"
+                pbar.set_postfix({
+                    "processed": processed_info
+                })
 
-        if len(total_result) > 0:
-            total_result.sort(key=lambda x: int(x['idx']))
+    if len(total_result) > 0:
+        total_result.sort(key=lambda x: int(x['idx']))
 
     return total_result
 
