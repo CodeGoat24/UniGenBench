@@ -58,7 +58,7 @@ def call_evaluation(args, client):
         '文本生成':'长、短文字，字体、文字载体',
         }
 
-    explanation = "考点说明：「「"
+    explanation = "考点说明：「"
 
     for point in testpoint:
         if point not in explanation_dict:
