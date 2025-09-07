@@ -93,13 +93,12 @@ class VLMessageClient:
             except Exception as e:
                 if attempt == max_retries:
                     print(f"请求失败（已达最大重试次数）: {str(e)}")
-                    result = {
-                        "question": item["problem"],
-                        "image_path": item["images"],
-                        "error": str(e),
-                        "attempt": attempt,
-                        "success": False
-                    }
+
+                    item['model_output'] = None
+                    item['success'] = False
+                    item['error'] = str(e)
+                    item['attempt'] = attempt
+                    result = item
                 else:
                     sleep_time = min(2 ** attempt, 10)
                     time.sleep(sleep_time)
