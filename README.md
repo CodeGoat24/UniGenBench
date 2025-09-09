@@ -29,7 +29,7 @@ Hunyuan, Tencent & [UnifiedReward](https://github.com/CodeGoat24/UnifiedReward) 
 
 Please leave us a star ⭐ if you find our benchmark helpful.
 
-- [2025/9] 🔥🔥 We release UniGenBench [Leaderboard (**English Long**)](https://huggingface.co/spaces/CodeGoat24/UniGenBench_Leaderboard_English_Long) and we will continue to update it regularly. The English long test prompts are provided in `./data`.
+- [2025/9] 🔥🔥 We release UniGenBench [Leaderboard (**English Long**)](https://huggingface.co/spaces/CodeGoat24/UniGenBench_Leaderboard_English_Long) and we will continue to update it regularly. The English long test prompts are provided in `./data/test_prompts_en_long.csv`.
 - [2025/9] 🔥🔥 We release UniGenBench [Leaderboard (**Chinese**)](https://huggingface.co/spaces/CodeGoat24/UniGenBench_Leaderboard_Chinese)  and we will continue to update it regularly.
 - [2025/9] 🔥🔥 We release **all generated images from the T2I models** evaluated in our UniGenBench on [UniGenBench-Eval-Images](https://huggingface.co/datasets/CodeGoat24/UniGenBench-Eval-Images). Feel free to use any evaluation model that is convenient and suitable for you to assess and compare the performance of your models.
 - [2025/9] 🔥🔥 **GPT-4o**, **Imagen-4-Ultra**, **Nano Banana**, **Seedream-3.0**, **Qwen-Image**, **FLUX-Kontext-[Max/Pro]** are added to the 🏅[Leaderboard](https://huggingface.co/spaces/CodeGoat24/UniGenBench_Leaderboard).
