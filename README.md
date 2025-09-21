@@ -30,7 +30,7 @@
 
 Please leave us a star ⭐ if you find our benchmark helpful.
 
-- [2025/9] 🔥🔥 **Lumina-DiMOO**, **OmniGen2**, **Infinity**, **X-Omni**, **OneCAT** are added to all 🏅Leaderboard.
+- [2025/9] 🔥🔥 **Lumina-DiMOO**, **OmniGen2**, **Infinity**, **X-Omni**, **OneCAT**, **Echo-4o**, and **MMaDA** are added to all 🏅Leaderboard.
 
 - [2025/9] 🔥🔥 **Seedream-4.0**, **Nano Banana**, **GPT-4o**, **Qwen-Image**, **FLUX-Kontext-[Max/Pro]** are added to all 🏅Leaderboard.
 <img width="868" height="728" alt="image" src="https://github.com/user-attachments/assets/a8a637b4-fbdb-46e9-83ce-12de7bb1eb4f" />
