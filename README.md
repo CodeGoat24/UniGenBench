@@ -227,7 +227,7 @@ If you have any comments or questions, please open a new issue or feel free to c
 ```bibtex
 @article{Pref-GRPO&UniGenBench,
   title={Pref-GRPO: Pairwise Preference Reward-based GRPO for Stable Text-to-Image Reinforcement Learning},
-  author={Wang, Yibin and Li, Zhimin and Zang, Yuhang and Zhou, Yujie and Bu, Jiazi and Wang, Chunyu and Lu, Qinglin, and Jin, Cheng and Wang, Jiaqi},
+  author={Wang, Yibin and Li, Zhimin and Zang, Yuhang and Zhou, Yujie and Bu, Jiazi and Wang, Chunyu and Lu, Qinglin and Jin, Cheng and Wang, Jiaqi},
   journal={arXiv preprint arXiv:2508.20751},
   year={2025}
 }
