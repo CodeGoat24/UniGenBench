@@ -27,8 +27,8 @@ def local_image_to_data_url(image_path):
     # Construct the data URL
     return f"data:{mime_type};base64,{base64_encoded_data}"
 
-def call_evaluation(args, client):
-    index, prompt, testpoint, test_desc, model, img_path = args
+def call_evaluation(args):
+    index, prompt, testpoint, test_desc, model, img_path, client = args
 
     explanation_dict = {
         '关系-比较关系':'两者的属性对比',
@@ -124,8 +124,8 @@ def call_evaluation(args, client):
                     },
                 ],
         )
-        text = response['choices'][0]['message']['content']
-        # text = response.choices[0].message.content
+        # text = response['choices'][0]['message']['content']
+        text = response.choices[0].message.content
         print(text)
 
 
@@ -205,12 +205,12 @@ def main(data_path: str, api_key: str, base_url: str, csv_file: str):
             if not os.path.exists(img_path):
                 raise()
                     
-            args.append((index, prompt, test_point, test_desc, model, img_path))
+            args.append((index, prompt, test_point, test_desc, model, img_path, client))
 
     # 使用进程池处理
     pool = Pool(processes=20)
     try:
-        for result in tqdm(pool.imap(call_evaluation, args, client), total=len(args)):
+        for result in tqdm(pool.imap(call_evaluation, args), total=len(args)):
   
             new_row = pd.DataFrame([{
                 'index': str(int(result['index'])),
