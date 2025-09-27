@@ -124,6 +124,7 @@ def call_evaluation(args):
                         ],
                     },
                 ],
+                max_tokens=4096,
         )
         # text = response['choices'][0]['message']['content']
         text = response.choices[0].message.content
