@@ -1,6 +1,6 @@
 echo ${LOCAL_IP}
 
-CUDA_VISIBLE_DEVICES=0,1,2,3 vllm serve Qwen/Qwen2.5-VL-72B-Instruct \
+CUDA_VISIBLE_DEVICES=0,1,2,3 vllm serve CodeGoat24/UniGenBench-EvalModel-qwen-72b-v1 \
     --host ${LOCAL_IP} \
     --trust-remote-code \
     --served-model-name QwenVL \
