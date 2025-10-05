@@ -30,6 +30,8 @@
 
 Please leave us a star ⭐ if you find our benchmark helpful.
 
+- [2025/10] 🔥🔥🔥 We release the offline evaluation model [UniGenBench-EvalModel-qwen-72b-v1](https://huggingface.co/CodeGoat24/UniGenBench-EvalModel-qwen-72b-v1), which achieves an average accuracy of 94% compared to evaluations by Gemini 2.5 Pro.
+
 - [2025/9] 🔥🔥 **Lumina-DiMOO**, **OmniGen2**, **Infinity**, **X-Omni**, **OneCAT**, **Echo-4o**, and **MMaDA** are added to all 🏅Leaderboard.
 
 - [2025/9] 🔥🔥 **Seedream-4.0**, **Nano Banana**, **GPT-4o**, **Qwen-Image**, **FLUX-Kontext-[Max/Pro]** are added to all 🏅Leaderboard.
@@ -160,7 +162,7 @@ python eval/calculate_score.py
 ```
 
 
-## ✨ Evaluation with Qwen2.5-VL-72b
+## ✨ Evaluation with UniGenBench-EvalModel
 ### 1. Deploy vLLM server
 
 1. Install vLLM
@@ -171,7 +173,7 @@ pip install vllm==0.9.0.1 transformers==4.52.4
 ```bash
 echo ${LOCAL_IP}
 
-CUDA_VISIBLE_DEVICES=0,1,2,3 vllm serve Qwen/Qwen2.5-VL-72B-Instruct \
+CUDA_VISIBLE_DEVICES=0,1,2,3 vllm serve CodeGoat24/UniGenBench-EvalModel-qwen-72b-v1 \
     --host ${LOCAL_IP} \
     --trust-remote-code \
     --served-model-name QwenVL \
