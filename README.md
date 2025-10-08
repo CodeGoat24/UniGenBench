@@ -11,8 +11,9 @@
 <a href="https://codegoat24.github.io/UnifiedReward/Pref-GRPO">
 <img src='https://img.shields.io/badge/Project-Website-orange' alt='Project Page'></a>
 
-[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-yellow)](https://huggingface.co/CodeGoat24/FLUX.1-dev-PrefGRPO) 
+
 [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Eval_Images-yellow)](https://huggingface.co/datasets/CodeGoat24/UniGenBench-Eval-Images)
+[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Offline_Eval_Model-yellow)](https://huggingface.co/CodeGoat24/UniGenBench-EvalModel-qwen-72b-v1) 
 
 [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20UniGenBench%20-Leaderboard_(English)-brown)](https://huggingface.co/spaces/CodeGoat24/UniGenBench_Leaderboard)
 [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20UniGenBench%20-Leaderboard_(Chinese)-red)](https://huggingface.co/spaces/CodeGoat24/UniGenBench_Leaderboard_Chinese)
@@ -31,6 +32,8 @@
 Please leave us a star ⭐ if you find our benchmark helpful.
 
 - [2025/10] 🔥🔥🔥 We release the offline evaluation model [UniGenBench-EvalModel-qwen-72b-v1](https://huggingface.co/CodeGoat24/UniGenBench-EvalModel-qwen-72b-v1), which achieves an average accuracy of 94% compared to evaluations by Gemini 2.5 Pro.
+<img width="788" height="615" alt="image" src="https://github.com/user-attachments/assets/c6b1fa48-d18a-42fd-b64e-6b221ced6b4e" />
+<img width="787" height="549" alt="image" src="https://github.com/user-attachments/assets/690811bc-2032-4af2-9609-01a69ac4b228" />
 
 - [2025/9] 🔥🔥 **Lumina-DiMOO**, **OmniGen2**, **Infinity**, **X-Omni**, **OneCAT**, **Echo-4o**, and **MMaDA** are added to all 🏅Leaderboard.
 
