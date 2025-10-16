@@ -1,5 +1,5 @@
 <div align="center">
-    <h1 align="center"> UniGenBench++: A Unified Semantic Evaluation Benchmark for <br>Text-to-Image Generation
+    <h1 align="center"> UniGenBench++: A Unified Semantic Evaluation Benchmark for Text-to-Image Generation
     </h1>
 
 
