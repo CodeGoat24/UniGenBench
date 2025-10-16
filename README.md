@@ -8,8 +8,22 @@ Hunyuan, Tencent & [UnifiedReward](https://github.com/CodeGoat24/UnifiedReward) 
 <a href="https://arxiv.org/pdf/2508.20751">
 <img src='https://img.shields.io/badge/arXiv-UniGenBench-blue' alt='Paper PDF'></a>
 
+
+
+
+
+
+<a href="https://arxiv.org/pdf/2508.20751">
+<img src='https://img.shields.io/badge/Technical Report-UniGenBench++-blue' alt='Paper PDF'></a>
+<br>
+
 <a href="https://codegoat24.github.io/UnifiedReward/Pref-GRPO">
-<img src='https://img.shields.io/badge/Project-Website-orange' alt='Project Page'></a>
+<img src='https://img.shields.io/badge/Website-UniGenBench-orange' alt='Project Page'></a>
+
+
+
+<a href="https://codegoat24.github.io/UniGenBench">
+<img src='https://img.shields.io/badge/Website-UniGenBench++-orange' alt='Project Page'></a>
 
 
 [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Eval_Images-yellow)](https://huggingface.co/datasets/CodeGoat24/UniGenBench-Eval-Images)
@@ -37,8 +51,6 @@ Please leave us a star ⭐ if you find our benchmark helpful.
 - [2025/9] 🔥🔥 **Lumina-DiMOO**, **OmniGen2**, **Infinity**, **X-Omni**, **OneCAT**, **Echo-4o**, and **MMaDA** are added to all 🏅Leaderboard.
 
 - [2025/9] 🔥🔥 **Seedream-4.0**, **Nano Banana**, **GPT-4o**, **Qwen-Image**, **FLUX-Kontext-[Max/Pro]** are added to all 🏅Leaderboard.
-<img width="868" height="728" alt="image" src="https://github.com/user-attachments/assets/a8a637b4-fbdb-46e9-83ce-12de7bb1eb4f" />
-
 
 - [2025/9] 🔥🔥 We release UniGenBench 🏅[Leaderboard (**Chinese**)](https://huggingface.co/spaces/CodeGoat24/UniGenBench_Leaderboard_Chinese), 🏅[Leaderboard (**English Long**)](https://huggingface.co/spaces/CodeGoat24/UniGenBench_Leaderboard_English_Long) and 🏅[Leaderboard (**Chinese Long**)](https://huggingface.co/spaces/CodeGoat24/UniGenBench_Leaderboard_Chinese_Long). We will continue to update them regularly. The test prompts are provided in `./data`.
 - [2025/9] 🔥🔥 We release **all generated images from the T2I models** evaluated in our UniGenBench on [UniGenBench-Eval-Images](https://huggingface.co/datasets/CodeGoat24/UniGenBench-Eval-Images). Feel free to use any evaluation model that is convenient and suitable for you to assess and compare the performance of your models.
@@ -57,17 +69,21 @@ We propose <b>UniGenBench</b>, a unified and versatile benchmark for image gener
 
 ### ✨ Highlights:
 
-- **Comprehensive and fine-grained evaluation**: covering 10 **primary** dimensions and 27 **sub-dimensions**, enabling systematic and fine-grained assessment of diverse model capabilities.
+- **Comprehensive and Fine-grained Evaluation**: covering 10 **primary dimensions** and 27 **sub-dimensions**, enabling systematic and fine-grained assessment of diverse model capabilities.
 
-- **Rich prompt theme coverage**: organized into 5 **primary** themes and 20 **sub-themes**, comprehensively spanning both realistic and imaginative generation scenarios.
+- **Rich Prompt Theme Coverage**: organized into 5 **primary themes** and 20 **sub-themes**, comprehensively spanning both realistic and imaginative generation scenarios.
 
-- **Efficient yet comprehensive**: unlike other benchmarks, UniGenBench requires only **600 prompts**, with each prompt targeting **1–5 specific testpoint**, ensuring both coverage and efficiency.
+- **Efficient yet Comprehensive**: unlike other benchmarks, UniGenBench requires only **600 prompts**, with each prompt targeting **1–10** specific testpoint, ensuring both coverage and efficiency.
 
-- **Reliable MLLM Evaluation**: Each testpoint of the prompt is accompanied by a **detailed description**, explaining how the testpoint is reflected in the prompt, assisting MLLM in conducting precise evaluations.
+- **Stremlined MLLM Evaluation**: Each testpoint of the prompt is accompanied by a **detailed description**, explaining how the testpoint is reflected in the prompt, assisting MLLM in conducting precise evaluations.
 
-- **Bilingual support**: providing test prompts in both **English** and **Chinese**, together with evaluation pipelines for both languages, thus enabling fair and broad cross-lingual benchmarking.
+- **Bilingual and Length-variant Prompt Support**: providing both **English** and **Chinese** test prompts in **short** and **long** forms, together with evaluation pipelines for both languages, thus enabling fair and broad cross-lingual benchmarking.
 
-<img width="949" height="168" alt="image" src="https://github.com/user-attachments/assets/5ab00a77-7924-42e2-8a32-edaf3eb872cf" />
+- **Reliable Evaluation Model for Offline Assessment**: To facilitate community use, we train a **robust evaluation model that supports offline assessment** of T2I model outputs.
+
+<img width="1000" height="168" alt="image" src="https://github.com/user-attachments/assets/5ab00a77-7924-42e2-8a32-edaf3eb872cf" />
+
+
 
 
 ![](assets/pipeline.jpg)
