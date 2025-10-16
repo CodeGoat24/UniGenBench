@@ -1,5 +1,5 @@
 <div align="center">
-    <h1 align="center"> UniGenBench: Unified Text-to-Image Generation Benchmark
+    <h1 align="center"> UniGenBench++: A Unified Semantic Evaluation Benchmark for <br>Text-to-Image Generation
     </h1>
 
 
@@ -32,8 +32,7 @@ Hunyuan, Tencent & [UnifiedReward](https://github.com/CodeGoat24/UnifiedReward) 
 Please leave us a star ⭐ if you find our benchmark helpful.
 
 - [2025/10] 🔥🔥🔥 We release the offline evaluation model [UniGenBench-EvalModel-qwen-72b-v1](https://huggingface.co/CodeGoat24/UniGenBench-EvalModel-qwen-72b-v1), which achieves an average accuracy of 94% compared to evaluations by Gemini 2.5 Pro.
-<img width="788" height="615" alt="image" src="https://github.com/user-attachments/assets/c6b1fa48-d18a-42fd-b64e-6b221ced6b4e" />
-<img width="787" height="549" alt="image" src="https://github.com/user-attachments/assets/690811bc-2032-4af2-9609-01a69ac4b228" />
+<img width="1121" height="432" alt="image" src="https://github.com/user-attachments/assets/5d5de340-6f31-4fbf-a37d-3181387dce7b" />
 
 - [2025/9] 🔥🔥 **Lumina-DiMOO**, **OmniGen2**, **Infinity**, **X-Omni**, **OneCAT**, **Echo-4o**, and **MMaDA** are added to all 🏅Leaderboard.
 
@@ -53,8 +52,9 @@ Please leave us a star ⭐ if you find our benchmark helpful.
 We propose <b>UniGenBench</b>, a unified and versatile benchmark for image generation that integrates diverse prompt themes with a comprehensive suite of fine-grained evaluation criteria. 
 
 
+<img width="994" height="745" alt="image" src="https://github.com/user-attachments/assets/9b281b2c-d0b0-4c34-8f47-2772a62b7bb9" />
 
-![](assets/teaser.png)
+
 ### ✨ Highlights:
 
 - **Comprehensive and fine-grained evaluation**: covering 10 **primary** dimensions and 27 **sub-dimensions**, enabling systematic and fine-grained assessment of diverse model capabilities.
@@ -67,12 +67,11 @@ We propose <b>UniGenBench</b>, a unified and versatile benchmark for image gener
 
 - **Bilingual support**: providing test prompts in both **English** and **Chinese**, together with evaluation pipelines for both languages, thus enabling fair and broad cross-lingual benchmarking.
 
-![](assets/comparison.png)
+<img width="949" height="168" alt="image" src="https://github.com/user-attachments/assets/5ab00a77-7924-42e2-8a32-edaf3eb872cf" />
+
 
 ![](assets/pipeline.jpg)
 
-
-![unigenbench_leadboard](assets/leaderboard.png)
 
 ## 📑 Prompt Introduction
 Each prompt in our benchmark is recorded as a row in a `.csv` file, combining with structured annotations for evaluation.  
@@ -237,3 +236,27 @@ If you have any comments or questions, please open a new issue or feel free to c
   year={2025}
 }
 ```
+
+## 🏅 Evaluation Leaderboards
+<div align="center">
+    
+### English Short Prompt Evaluation
+
+<img width="1055" height="662" alt="en_short" src="https://github.com/user-attachments/assets/3f6ce637-aa05-4232-a17d-1852e6e77067" />
+
+### English Long Prompt Evaluation
+
+<img width="1055" height="662" alt="en_long" src="https://github.com/user-attachments/assets/20df3fae-e6be-4546-b75b-c4d52d8ba5c4" />
+
+### Chinese Short Prompt Evaluation
+
+<img width="1055" height="662" alt="zh_short" src="https://github.com/user-attachments/assets/ac29a9eb-b839-4764-bd48-517d523751ca" />
+
+### Chinese Long Prompt Evaluation
+
+<img width="1055" height="662" alt="zh_long" src="https://github.com/user-attachments/assets/e886f3eb-cef2-4a68-af23-f4e9b4059106" />
+
+
+
+
+
