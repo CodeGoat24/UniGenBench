@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style></style>
+  
+  <meta name="description" content="UniGenBench++: A Unified Semantic Evaluation Benchmark for Text-to-Image Generation">
+  <meta name="keywords" content="Text-to-image Generation,Semantic Evaluation, Benchmark">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniGenBench++</title>
+
+
+  <link rel="shortcut icon" href="https://picx.zhimg.com/v2-cb40b1f8c3125f3cfb9a4538e1c0f2b7_l.jpg?source=32738c0c" type="image/x-icon">
+  <link href="./static/css" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/bulma.min.css">
+  <link rel="stylesheet" href="./static/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./static/academicons.min.css">
+  <link rel="stylesheet" href="./static/index.css">
+  <link rel="stylesheet" href="./static/leaderboard.css">
+
+  <script type="text/javascript" src="./static/sort-table.js" defer=""></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer="" src="./static/fontawesome.all.min.js"></script>
+  <script src="./static/bulma-carousel.min.js"></script>
+  <script src="./static/bulma-slider.min.js"></script>
+  <script src="./static/explorer-index.js"></script>
+  <script src="./static/question_card.js"></script>
+
+  <script src="./static/leaderboard_testmini.js"></script>  
+  <script src="./static/output_folders.js" defer=""></script>
+  <script src="./static/model_scores.js" defer=""></script>
+
+  <script src="./static/data_public.js" defer=""></script>
+
+  <style>
+      .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            margin-top: -20px;
+        }
+    .node {
+      fill: #f8f1e4;
+      stroke: #000;
+      stroke-width: 1;
+      rx: 10;
+      ry: 10;
+    }
+    .node text {
+      font-size: 14px;
+      text-anchor: middle;
+    }
+    .link {
+      fill: none;
+      stroke: #000;
+      stroke-width: 2;
+    }
+    .badge {
+      font-size: 12px;
+    }
+  </style>
+
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title is-bold" style="display: inline-block; margin-right: 0px;">
+            <span style="vertical-align: middle">UniGenBench++: A Unified Semantic Evaluation Benchmark for Text-to-Image Generation</span>
+            </h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://codegoat24.github.io/"><b>Yibin Wang</b></a><sup>1,2,4*</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=Lnr1FQEAAAAJ&hl=zh-CN"><b>Zhimin Li</b></a><sup>4*</sup><sup></sup>,</span>
+            <span class="author-block">
+              <a href="https://yuhangzang.github.io/"><b>Yuhang Zang</b></a><sup>3*</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com.hk/citations?user=XLnXvPwAAAAJ&hl=zh-TW"><b>Yujie Zhou</b></a><sup>3,5</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com.hk/citations?user=a8h9Di4AAAAJ&hl=zh-TW"><b>Jiazi Bu</b></a><sup>3,5</sup>,</span>
+              <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=FbJyUYoAAAAJ&hl=zh-CN"><b>Yi Xin</b></a><sup>2</sup>,</span>
+              <a href="https://scholar.google.com/citations?user=Z4LgebkAAAAJ&hl=zh-CN"><b>JunJun He</b></a><sup>3</sup>,</span>
+              <a href="https://scholar.google.com/citations?user=VXQV5xwAAAAJ&hl=en"><b>Chunyu Wang</b></a><sup>4</sup>,</span>
+              <span class="author-block">
+              <a href="https://openreview.net/profile?id=%7EQinglin_Lu2"><b>Qinglin Lu</b></a><sup>4</sup>,</span>
+            <span class="author-block">
+              <a href="https://cjinfdu.github.io/"><b>Cheng Jin</b></a><sup>1</sup><sup>†</sup>,</span>
+              <span class="author-block">
+                <a href="https://myownskyw7.github.io/"><b>Jiaqi Wang</b></a><sup>2,3</sup><sup>†</sup>,</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block" style="margin-right: 15px;"><sup>1</sup>Fudan University,</span> 
+            <span class="author-block" style="margin-right: 15px;"><sup>2</sup>Shanghai Innovation Intuition,</span><br>
+            <span class="author-block" style="margin-right: 15px;"><sup>3</sup>Shanghai AI Lab,</span>
+            <span class="author-block" style="margin-right: 15px;"><sup>4</sup>Hunyuan, Tencent</span><br>
+            <span class="author-block" style="margin-right: 15px;"><sup>5</sup>Shanghai Jiaotong University</span>
+            <!-- <span class="paper-block"><b style="color:#f41c1c">ICLR 2024 Oral</b> (85 in 7304, 1.2%)</span> -->
+          </div>
+          <!-- ArXiv Link. -->
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+             
+              
+               <span class="link-block">
+                <a href="https://github.com/CodeGoat24/UniGenBench" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <br>
+              <span class="link-block">
+                <a href="https://huggingface.co/CodeGoat24/UniGenBench-EvalModel-qwen-72b-v1" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      😊
+                  </span>
+                  <span>UniGenBench Eval Model</span>
+                  </a>
+              </span>
+              <span class="link-block">
+                <a href="https://huggingface.co/datasets/CodeGoat24/UniGenBench-Eval-Images" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      😊
+                  </span>
+                  <span>Eval Images</span>
+                  </a>
+              </span>
+              <br>
+              <span class="link-block">
+                <a href="https://huggingface.co/spaces/CodeGoat24/UniGenBench_Leaderboard" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <!-- <i class="far fa-images"></i> -->
+                      <p style="font-size:18px">🏅</p>
+                      <!-- 🔗 -->
+                  </span>
+                  <span>EN Short</span>
+                </a>
+              </span> 
+              <span class="link-block">
+                <a href="https://huggingface.co/spaces/CodeGoat24/UniGenBench_Leaderboard_English_Long" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <!-- <i class="far fa-images"></i> -->
+                      <p style="font-size:18px">🏅</p>
+                      <!-- 🔗 -->
+                  </span>
+                  <span>EN Long</span>
+                </a>
+              </span> 
+            <span class="link-block">
+                <a href="https://huggingface.co/spaces/CodeGoat24/UniGenBench_Leaderboard_Chinese" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <!-- <i class="far fa-images"></i> -->
+                      <p style="font-size:18px">🏅</p>
+                      <!-- 🔗 -->
+                  </span>
+                  <span>ZH Short</span>
+                </a>
+              </span> 
+              <span class="link-block">
+                <a href="https://huggingface.co/spaces/CodeGoat24/UniGenBench_Leaderboard_Chinese_Long" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <!-- <i class="far fa-images"></i> -->
+                      <p style="font-size:18px">🏅</p>
+                      <!-- 🔗 -->
+                  </span>
+                  <span>ZH Long</span>
+                </a>
+              </span> 
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Begin Teaser -->
+<div>
+<section class="section">
+  <div class="container is-max-desktop" >
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="content has-text-centered" style="margin-top: 1cm;">
+        <img src="./static/images/teaser.png" alt="pipeline" >
+      </div>
+    </div>
+    
+    
+
+  </div>
+  </div>
+
+
+
+</section>
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Benchmark Statistics</h2>
+
+      </div>
+    </div>
+      <div class="content has-text-centered">
+        <img src="static/images/word_cloud.png" alt="data-overview" width="800" height="600">
+      </div>
+      <div class="hero-body">
+        <h2 class="subtitle has-text-justified">
+          <p class="has-text-centered"><b>Benchmark Statistics.</b><br>(a) Word clouds for English and Chinese prompts in both short and long forms; (b) overall prompt length distribution; and (c) distribution of testpoint counts per prompt for short versus long versions.</p>
+        </h2>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+
+
+
+
+
+
+</div>
+<!-- End Teaser -->
+
+<div>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Evaluation Dimensions</h2>
+
+
+      </div>
+    </div>
+      <div class="content has-text-centered">
+        <img src="static/images/testpoint_cases.png" alt="data-overview" width="1000" height="800">
+      </div>
+      <div class="hero-body">
+        <h2 class="subtitle has-text-justified">
+          <p class="has-text-centered"><b>Qualitative Cases.</b><br>We present qualitative examples of T2I models evaluated across our specified dimensions.</p>
+        </h2>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop" >
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Benchmark Construction and Offline Evaluation Model Training.</h2>
+
+
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+    
+      <div class="content has-text-centered" style="margin-top: 1cm;">
+        <img src="./static/images/pipeline.png" alt="pipeline" width="600" height="400">
+      </div>
+    </div>
+    
+    
+  </div>
+ 
+  <div class="columns is-centered">
+      <div class="content has-text-centered" style="margin-top: 1cm;">
+        <img src="./static/images/eval_acc.png" alt="pipeline" width="1400" height="1200">
+      </div>
+    </div>
+    
+    <div class="hero-body">
+      <h2 class="has-text-justified" style="margin-top: -1cm;">
+      <p class="has-text-centered"><b>Evaluation Accuracy Comparison.</b><br>Our dedicated evaluation model demonstrates a significant improvement in evaluation accuracy across all test points compared to the commonly used offline evaluation VLM, Qwen2.5-VL-72b.</p>
+      </h2>
+    </div>
+
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop" >
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h4 class="title is-3">English Short Prompt Evaluation</h4>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="content has-text-centered" style="margin-top: 1cm;">
+        <img src="./static/images/en_short.png" alt="pipeline" >
+      </div>
+    </div>
+    
+<div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h4 class="title is-3">English Long Prompt Evaluation</h4>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="content has-text-centered" style="margin-top: 1cm;">
+        <img src="./static/images/en_long.png" alt="pipeline" >
+      </div>
+    </div>
+    
+    
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h4 class="title is-3">Chinese Short Prompt Evaluation</h4>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="content has-text-centered" style="margin-top: 1cm;">
+        <img src="./static/images/zh_short.png" alt="pipeline" >
+      </div>
+    </div>
+    
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h4 class="title is-3">Chinese Long Prompt Evaluation</h4>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="content has-text-centered" style="margin-top: 1cm;">
+        <img src="./static/images/zh_long.png" alt="pipeline" >
+      </div>
+    </div>
+  </div>
+  </div>
+  
+  
+    
+
+
+</section>
+
+
+      
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+
+    </code></pre>
+  </div>
+</section>
+
+</body></html>
