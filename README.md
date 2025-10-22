@@ -245,6 +245,13 @@ If you have any comments or questions, please open a new issue or feel free to c
 
 ## ⭐ Citation
 ```bibtex
+@article{UniGenBench++,
+  title={UniGenBench++: A Unified Semantic Evaluation Benchmark for Text-to-Image Generation},
+  author={Wang, Yibin and Li, Zhimin and Zang, Yuhang and Bu, Jiazi and Zhou, Yujie and Xin, Yi and He, Junjun and Wang, Chunyu and Lu, Qinglin and Jin, Cheng and Wang, Jiaqi},
+  journal={arXiv preprint arXiv:2510.18701},
+  year={2025}
+}
+
 @article{Pref-GRPO&UniGenBench,
   title={Pref-GRPO: Pairwise Preference Reward-based GRPO for Stable Text-to-Image Reinforcement Learning},
   author={Wang, Yibin and Li, Zhimin and Zang, Yuhang and Zhou, Yujie and Bu, Jiazi and Wang, Chunyu and Lu, Qinglin and Jin, Cheng and Wang, Jiaqi},
