@@ -13,7 +13,7 @@ Hunyuan, Tencent & [UnifiedReward](https://github.com/CodeGoat24/UnifiedReward) 
 
 
 
-<a href="https://arxiv.org/pdf/2508.20751">
+<a href="https://arxiv.org/pdf/2510.18701">
 <img src='https://img.shields.io/badge/Technical Report-UniGenBench++-blue' alt='Paper PDF'></a>
 <br>
 
