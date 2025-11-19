@@ -27,8 +27,8 @@ def local_image_to_data_url(image_path):
     # Construct the data URL
     return f"data:{mime_type};base64,{base64_encoded_data}"
 
-def call_evaluation(args, api_url):
-    index, prompt, testpoint, test_desc, img_path = args
+def call_evaluation(args):
+    index, prompt, testpoint, test_desc, img_path, api_url = args
 
     explanation_dict = {
         "Relationship - Comparison": "Comparison of attributes between two entities",
@@ -201,12 +201,12 @@ def main(data_path: str, api_url: str, csv_file: str):
             if not os.path.exists(img_path):
                 raise()
                     
-            args.append((index, prompt, test_point, test_desc, img_path))
+            args.append((index, prompt, test_point, test_desc, img_path, api_url))
 
 
     pool = Pool(processes=20)
     try:
-        for result in tqdm(pool.imap(call_evaluation, args, api_url), total=len(args)):
+        for result in tqdm(pool.imap(call_evaluation, args), total=len(args)):
   
             new_row = pd.DataFrame([{
                 'index': str(int(result['index'])),
