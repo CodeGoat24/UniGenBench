@@ -84,7 +84,7 @@ def call_evaluation(args):
         test_explanation += f"\n{point}: {test_desc[idx]}"
     test_explanation += "\n」"
 
-
+    retry_num = 0
     while True:
         system_prompt = f'''你是一个精确且客观的中文图像描述系统。我会给你一段生成图像的提示词，以及对应的生成图像，同时对于生成图像与提示词之间相关性的考点及对应说明，你需要逐个考点来判断生成的图像是否遵从了提示词中所包含的对应考点要求。
 
@@ -142,10 +142,32 @@ def call_evaluation(args):
                 score = ast.literal_eval(score_str)
 
                 if len(testpoint) != len(analysis) or len(testpoint) != len(score):
-                    continue
+                    if retry_num < 10:
+                        retry_num += 1
+                        continue
+                    else:
+                        return dict(
+                            index = index,
+                            testpoint = testpoint,
+                            prompt = prompt,
+                            img_path=img_path,
+                            output = text,
+                            result_json = None,
+                        )
             except Exception as e:
                 print(e)
-                continue
+                if retry_num < 10:
+                    retry_num += 1
+                    continue
+                else:
+                    return dict(
+                        index = index,
+                        testpoint = testpoint,
+                        prompt = prompt,
+                        img_path=img_path,
+                        output = text,
+                        result_json = None,
+                    )
 
             result_json = {
                 'prompt': prompt,
@@ -165,7 +187,18 @@ def call_evaluation(args):
             )
         else:
             print("None")
-            continue
+            if retry_num < 10:
+                retry_num += 1
+                continue
+            else:
+                return dict(
+                    index = index,
+                    testpoint = testpoint,
+                    prompt = prompt,
+                    img_path=img_path,
+                    output = text,
+                    result_json = None,
+                )
 
 
 def main(data_path: str, api_key: str, base_url: str, csv_file: str):
@@ -243,23 +276,26 @@ def main(data_path: str, api_key: str, base_url: str, csv_file: str):
 
     for _, row in df.iterrows():
         checkpoints = ast.literal_eval(row['testpoint'])
-        scores = ast.literal_eval(row['result_json'])['score'] if isinstance(row['result_json'], str) else row['score']
-
-        if not isinstance(scores, list):
-            scores = ast.literal_eval(row['score'])
-
-        for cp, score in zip(checkpoints, scores):
-
-            if '-' in cp:
-                big_class, small_class = cp.split('-', 1)[0], cp
-            else:
-                big_class = small_class = cp
-
-            big_class_stats[big_class][1] += 1
-            small_class_stats[small_class][1] += 1
-            if score == 1:
-                big_class_stats[big_class][0] += 1
-                small_class_stats[small_class][0] += 1
+        try:
+            scores = ast.literal_eval(row['result_json'])['score'] if isinstance(row['result_json'], str) else row['score']
+    
+            if not isinstance(scores, list):
+                scores = ast.literal_eval(row['score'])
+    
+            for cp, score in zip(checkpoints, scores):
+    
+                if '-' in cp:
+                    big_class, small_class = cp.split('-', 1)[0], cp
+                else:
+                    big_class = small_class = cp
+    
+                big_class_stats[big_class][1] += 1
+                small_class_stats[small_class][1] += 1
+                if score == 1:
+                    big_class_stats[big_class][0] += 1
+                    small_class_stats[small_class][0] += 1
+        except:
+            continue
 
     print("📘 Primary Dimension Evaluation Results:")
     for big_class, (correct, total) in big_class_stats.items():
