@@ -1,4 +1,8 @@
 <div align="center">
+<img width="724" height="313" alt="" src="https://github.com/user-attachments/assets/50593fdc-ed3d-48b7-8e83-c234b64da2e0" />
+
+</div>
+<div align="center">
     <h1 align="center"> UniGenBench++: A Unified Semantic Evaluation Benchmark for Text-to-Image Generation
     </h1>
 
