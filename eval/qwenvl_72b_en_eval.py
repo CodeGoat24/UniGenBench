@@ -83,7 +83,7 @@ def call_evaluation(args):
         test_explanation += f"\n{point}: {test_desc[idx]}"
     test_explanation += "\n」"
 
-
+    retry_num = 0
     while True:
         system_prompt = f'''You are a precise and objective English-language image description system. I will provide you with a prompt for image generation, as well as the corresponding generated image. You will be given a set of evaluation criteria (checkpoints) and their explanations that define the relevance between the prompt and the image. You must evaluate whether the generated image fulfills the requirements implied by each checkpoint in the prompt.
 
@@ -143,10 +143,32 @@ def call_evaluation(args):
                 score = ast.literal_eval(score_str)
 
                 if len(testpoint) != len(analysis) or len(testpoint) != len(score):
-                    continue
+                    if retry_num < 10:
+                        retry_num += 1
+                        continue
+                    else:
+                        return dict(
+                            index = index,
+                            testpoint = testpoint,
+                            prompt = prompt,
+                            img_path=img_path,
+                            output = text,
+                            result_json = None,
+                        )
             except Exception as e:
                 print(e)
-                continue
+                if retry_num < 10:
+                    retry_num += 1
+                    continue
+                else:
+                    return dict(
+                        index = index,
+                        testpoint = testpoint,
+                        prompt = prompt,
+                        img_path=img_path,
+                        output = text,
+                        result_json = None,
+                    )
 
             result_json = {
                 'prompt': prompt,
@@ -166,7 +188,18 @@ def call_evaluation(args):
             )
         else:
             print("None")
-            continue
+            if retry_num < 10:
+                retry_num += 1
+                continue
+            else:
+                return dict(
+                    index = index,
+                    testpoint = testpoint,
+                    prompt = prompt,
+                    img_path=img_path,
+                    output = text,
+                    result_json = None,
+                )
 
 
 def main(data_path: str, api_url: str, csv_file: str):
@@ -238,23 +271,26 @@ def main(data_path: str, api_url: str, csv_file: str):
 
     for _, row in df.iterrows():
         checkpoints = ast.literal_eval(row['testpoint'])
-        scores = ast.literal_eval(row['result_json'])['score'] if isinstance(row['result_json'], str) else row['score']
-
-        if not isinstance(scores, list):
-            scores = ast.literal_eval(row['score'])
-
-        for cp, score in zip(checkpoints, scores):
-
-            if '-' in cp:
-                big_class, small_class = cp.split('-', 1)[0], cp
-            else:
-                big_class = small_class = cp
-
-            big_class_stats[big_class][1] += 1
-            small_class_stats[small_class][1] += 1
-            if score == 1:
-                big_class_stats[big_class][0] += 1
-                small_class_stats[small_class][0] += 1
+        try:
+            scores = ast.literal_eval(row['result_json'])['score'] if isinstance(row['result_json'], str) else row['score']
+    
+            if not isinstance(scores, list):
+                scores = ast.literal_eval(row['score'])
+    
+            for cp, score in zip(checkpoints, scores):
+    
+                if '-' in cp:
+                    big_class, small_class = cp.split('-', 1)[0], cp
+                else:
+                    big_class = small_class = cp
+    
+                big_class_stats[big_class][1] += 1
+                small_class_stats[small_class][1] += 1
+                if score == 1:
+                    big_class_stats[big_class][0] += 1
+                    small_class_stats[small_class][0] += 1
+        except:
+            continue
 
     print("📘 Primary Dimension Evaluation Results:")
     for big_class, (correct, total) in big_class_stats.items():
