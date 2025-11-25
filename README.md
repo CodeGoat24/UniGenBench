@@ -49,6 +49,8 @@
 
 Please leave us a star ⭐ if you find our benchmark helpful.
 
+- [2025/11] 🔥🔥🔥 We release the offline evaluation model [UniGenBench-EvalModel-qwen3vl-32b-v1](https://huggingface.co/CodeGoat24/UniGenBench-EvalModel-qwen3vl-32b-v1).
+
 - [2025/10] 🔥🔥🔥 We release the offline evaluation model [UniGenBench-EvalModel-qwen-72b-v1](https://huggingface.co/CodeGoat24/UniGenBench-EvalModel-qwen-72b-v1), which achieves an average accuracy of 94% compared to evaluations by Gemini 2.5 Pro.
 <img width="1121" height="432" alt="image" src="https://github.com/user-attachments/assets/5d5de340-6f31-4fbf-a37d-3181387dce7b" />
 
@@ -189,7 +191,9 @@ python eval/calculate_score.py
 
 1. Install vLLM
 ```bash
-pip install vllm==0.9.0.1 transformers==4.52.4
+pip install vllm>=0.11.0
+
+pip install qwen-vl-utils==0.0.14
 ```
 2. Start server
 ```bash
@@ -202,7 +206,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 vllm serve CodeGoat24/UniGenBench-EvalModel-qwen-72
     --gpu-memory-utilization 0.9 \
     --tensor-parallel-size 4 \
     --pipeline-parallel-size 1 \
-    --limit-mm-per-prompt image=2 \
+    --limit-mm-per-prompt.image 2 \
     --port 8080 
 ```
 
