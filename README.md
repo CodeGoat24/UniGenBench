@@ -199,17 +199,30 @@ pip install qwen-vl-utils==0.0.14
 ```
 2. Start server
 ```bash
-echo ${LOCAL_IP}
+# UniGenBench-EvalModel-qwen-72b-v1
 
-CUDA_VISIBLE_DEVICES=0,1,2,3 vllm serve CodeGoat24/UniGenBench-EvalModel-qwen-72b-v1 \
-    --host ${LOCAL_IP} \
+vllm serve CodeGoat24/UniGenBench-EvalModel-qwen-72b-v1 \
+    --host localhost \
     --trust-remote-code \
     --served-model-name QwenVL \
     --gpu-memory-utilization 0.9 \
     --tensor-parallel-size 4 \
     --pipeline-parallel-size 1 \
     --limit-mm-per-prompt.image 2 \
-    --port 8080 
+    --port 8080
+
+
+# UniGenBench-EvalModel-qwen3vl-32b-v1 (recommended, support deploying on 8 gpus)
+
+vllm serve CodeGoat24/UniGenBench-EvalModel-qwen3vl-32b-v1 \
+    --host localhost \
+    --trust-remote-code \
+    --served-model-name QwenVL \
+    --gpu-memory-utilization 0.9 \
+    --tensor-parallel-size 8 \ 
+    --pipeline-parallel-size 1 \
+    --limit-mm-per-prompt.image 2 \
+    --port 8080
 ```
 
 ### 2. Evaluation
@@ -217,13 +230,15 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 vllm serve CodeGoat24/UniGenBench-EvalModel-qwen-72
 #!/bin/bash
 
 # vLLM request url
-API_URL=http://${LOCAL_IP}:8080
+API_URL=http://localhost:8080
 
 DATA_PATH="flux_output"  # Directory of generated images
-CSV_FILE="data/test_prompts_en.csv" # English test prompt file
+
 
 # English Evaluation
-python eval/qwenvl_72b_en_eval.py \
+CSV_FILE="data/test_prompts_en.csv" # English test prompt file
+
+python eval/offline_model_en_eval.py \
   --data_path "$DATA_PATH" \
   --api_url "$API_URL" \
   --csv_file "$CSV_FILE"
@@ -231,7 +246,7 @@ python eval/qwenvl_72b_en_eval.py \
 # Chinese Evaluation
 CSV_FILE="data/test_prompts_zh.csv" # Chinese test prompt file
 
-python eval/qwenvl_72b_zh_eval.py \
+python eval/offline_model_zh_eval.py \
   --data_path "$DATA_PATH" \
   --api_url "$API_URL" \
   --csv_file "$CSV_FILE"
