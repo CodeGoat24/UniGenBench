@@ -10,13 +10,9 @@ from torch.utils.data.distributed import DistributedSampler
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 from diffusers import FluxPipeline
-import matplotlib.pyplot as plt
-from PIL import Image
-from diffusers import FluxPipeline
 from transformers import (
     CLIPTextModel, CLIPTokenizer,
     T5EncoderModel, T5TokenizerFast,
-    CLIPVisionModelWithProjection,
 )
 import pandas as pd
 from diffusers.models import AutoencoderKL, FluxTransformer2DModel
@@ -145,7 +141,7 @@ if __name__ == "__main__":
         default=None,
     )
 
-    parser.add_argument("--prompt_dir", type=str, default="data/test_prompts_en.csv")
+    parser.add_argument("--prompt_dir", type=str, default="data/test_prompts_zh.csv")
     args = parser.parse_args()
 
     main(args)

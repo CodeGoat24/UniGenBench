@@ -109,7 +109,7 @@ class VLMessageClient:
                 raw_messages = self.build_messages(item, image_root)
 
                 payload = {
-                    "model": "UnifiedReward",
+                    "model": "QwenVL",
                     "messages": raw_messages,
                     "do_sample": False,
                     "max_tokens": 4096,
@@ -303,9 +303,10 @@ def main():
     )
 
     success_count = sum(1 for item in results if item and item.get("success"))
-    print("\nStatics:")
+    print("\nStatistics:")
     print(f"Total data: {len(test_data)}")
-    print(f"Success ratio: {success_count} ({success_count/len(test_data):.2%})")
+    ratio = success_count / len(test_data) if len(test_data) > 0 else 0
+    print(f"Success ratio: {success_count} ({ratio:.2%})")
 
 
 if __name__ == "__main__":

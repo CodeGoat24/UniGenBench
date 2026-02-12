@@ -98,20 +98,24 @@ We propose <b>UniGenBench</b>, a unified and versatile benchmark for image gener
 
 
 ## 📑 Prompt Introduction
-Each prompt in our benchmark is recorded as a row in a `.csv` file, combining with structured annotations for evaluation.  
+Each prompt in our benchmark is recorded as a row in a `.csv` file, combining with structured annotations for evaluation.
 
-- **index** 
-- **prompt**: The full English prompt to be tested  
-- **sub_dims**: A JSON-encoded field that organizes rich metadata, including:  
-  - **Primary / Secondary Categories** – prompt theme (e.g., *Creative Divergence → Imaginative Thinking*)  
-  - **Subjects** – the main entities involved in the prompt (e.g., *Animal*)  
-  - **Sentence Structure** – the linguistic form of the prompt (e.g., *Descriptive*)  
-  - **Testpoints** – key aspects to evaluate (e.g., *Style*, *World Knowledge*, *Attribute - Quantity*)  
-  - **Testpoint Description** – evaluation cues extracted from the prompt (e.g., *classical ink painting*, *Egyptian pyramids*, *two pandas*)  
+- **index**
+- **prompt**: The full English prompt to be tested
+- **sub_dims**: A JSON-encoded field that organizes rich metadata, including:
+  - **Primary / Secondary Categories** – prompt theme (e.g., *Creative Divergence → Imaginative Thinking*)
+  - **Subjects** – the main entities involved in the prompt (e.g., *Animal*)
+  - **Sentence Structure** – the linguistic form of the prompt (e.g., *Descriptive*)
+  - **Testpoints** – key aspects to evaluate (e.g., *Style*, *World Knowledge*, *Attribute - Quantity*)
+  - **Testpoint Description** – evaluation cues extracted from the prompt (e.g., *classical ink painting*, *Egyptian pyramids*, *two pandas*)
 
-- **English** Test set: `data/test_prompts_en.csv`
-- **Chinese** Test set: `data/test_prompts_zh.csv`
-- **Training** set: `train_prompt.txt`
+| Category | File | Description |
+|----------|------|-------------|
+| English Short | `data/test_prompts_en.csv` | 600 short English prompts |
+| English Long | `data/test_prompts_en_long.csv` | Long-form English prompts |
+| Chinese Short | `data/test_prompts_zh.csv` | 600 short Chinese prompts |
+| Chinese Long | `data/test_prompts_zh_long.csv` | Long-form Chinese prompts |
+| Training | `data/train_prompt.txt` | Training prompts |
 
 
 ## 🚀 Inference
@@ -139,128 +143,120 @@ output_directory/
 The file naming follows the pattern `promptID_imageID.png`
 
 
-## ✨ Evaluation with Gemini2.5-pro
-We are using the API version:
+## 📂 Expected Image Directory Structure
 
-> **gemini-2.5-pro**:
->
-> Release stage: General Availability (GA)
->
-> Release date: June 17, 2025
->
+The evaluation scripts expect generated images organized as follows:
+
+```
+eval_data/
+  ├── en/
+  │   └── FLUX.1-dev/          # --model name
+  │       ├── 0_0.png
+  │       ├── 0_1.png
+  │       ├── ...
+  │       └── 599_3.png
+  ├── en_long/
+  │   └── FLUX.1-dev/
+  ├── zh/
+  │   └── FLUX.1-dev/
+  └── zh_long/
+      └── FLUX.1-dev/
+```
+
+File naming: `{promptID}_{imageID}.png` (4 images per prompt by default).
+
+You can customize the base directory via `--eval_data_dir`, images per prompt via `--images_per_prompt`, and file extension via `--image_suffix`.
+
+
+## ✨ Evaluation with Gemini 2.5 Pro
+
+We use **gemini-2.5-pro** (GA, June 17, 2025) via OpenAI-compatible API.
+
 ### 1. Evaluation
-```
-#!/bin/bash
+```bash
+# Set API credentials (or pass via --api_key / --base_url)
+export GEMINI_API_KEY="sk-xxxxxxx"
+export GEMINI_BASE_URL="https://..."
 
-# API
-API_KEY="sk-xxxxxxx"
-BASE_URL=""
+# Evaluate English & Chinese short prompts
+bash eval/eval_gemini.sh --model FLUX.1-dev --categories en zh
 
-DATA_PATH="flux_output"  # Directory of generated images
-CSV_FILE="data/test_prompts_en.csv" # English test prompt file
+# Evaluate all categories (en, en_long, zh, zh_long)
+bash eval/eval_gemini.sh --model FLUX.1-dev --categories all
 
-# English Evaluation
-python eval/gemini_en_eval.py \
-  --data_path "$DATA_PATH" \
-  --api_key "$API_KEY" \
-  --base_url "$BASE_URL" \
-  --csv_file "$CSV_FILE"
-
-# Chinese Evaluation
-CSV_FILE="data/test_prompts_zh.csv" # Chinese test prompt file
-
-python eval/gemini_zh_eval.py \
-  --data_path "$DATA_PATH" \
-  --api_key "$API_KEY" \
-  --base_url "$BASE_URL" \
-  --csv_file "$CSV_FILE"
+# Resume from previous progress
+bash eval/eval_gemini.sh --model FLUX.1-dev --categories en --resume
 ```
 
-- After evaluation, scores across all dimensions will be **printed to the console**.  
-- A detailed `.csv` **results file** will also be saved in the `./results` directory.  
- 
+Available categories: `en` (English short), `en_long` (English long), `zh` (Chinese short), `zh_long` (Chinese long), `all`.
 
-### 2. Calculate Score
+Run `bash eval/eval_gemini.sh -h` for all options (`--num_processes`, `--images_per_prompt`, etc.).
 
-You can also load the results file to re-print or further analyze the scores. 
-```
-python eval/calculate_score.py
+### 2. Output
+
+After evaluation, for each category:
+- Scores across all dimensions are **printed to the console**
+- A detailed **CSV results file** is saved: `./results/{model}_{category}.csv`
+- A **JSON score summary** is saved: `./results/{model}_{category}.json`
+
+### 3. Re-calculate Scores
+```bash
+python eval/src/calculate_score.py --result_csv ./results/FLUX.1-dev_en.csv --json_path ./results/FLUX.1-dev_en.json
 ```
 
 
 ## ✨ Evaluation with UniGenBench-EvalModel
-### 1. Deploy vLLM server
 
-1. Install vLLM
+### 1. Deploy vLLM Server
+
+Install dependencies:
 ```bash
-pip install vllm>=0.11.0
-
-pip install qwen-vl-utils==0.0.14
+pip install vllm>=0.11.0 qwen-vl-utils==0.0.14
 ```
-2. Start server
+
+Start server:
 ```bash
 # UniGenBench-EvalModel-qwen-72b-v1
-
 vllm serve CodeGoat24/UniGenBench-EvalModel-qwen-72b-v1 \
-    --host localhost \
-    --trust-remote-code \
+    --host localhost --port 8080 \
     --served-model-name QwenVL \
+    --trust-remote-code \
     --gpu-memory-utilization 0.9 \
     --tensor-parallel-size 4 \
-    --pipeline-parallel-size 1 \
-    --limit-mm-per-prompt.image 2 \
-    --port 8080
+    --limit-mm-per-prompt.image 2
 
-
-# UniGenBench-EvalModel-qwen3vl-32b-v1 (recommended, support deploying on 8 gpus)
-
+# UniGenBench-EvalModel-qwen3vl-32b-v1 (recommended, supports 8 GPUs)
 vllm serve CodeGoat24/UniGenBench-EvalModel-qwen3vl-32b-v1 \
-    --host localhost \
-    --trust-remote-code \
+    --host localhost --port 8080 \
     --served-model-name QwenVL \
+    --trust-remote-code \
     --gpu-memory-utilization 0.9 \
-    --tensor-parallel-size 8 \ 
-    --pipeline-parallel-size 1 \
-    --limit-mm-per-prompt.image 2 \
-    --port 8080
+    --tensor-parallel-size 8 \
+    --limit-mm-per-prompt.image 2
 ```
 
 ### 2. Evaluation
-```
-#!/bin/bash
+```bash
+# Evaluate English & Chinese short prompts
+bash eval/eval_vllm.sh --model FLUX.1-dev --categories en zh
 
-# vLLM request url
-API_URL=http://localhost:8080
+# Evaluate all categories
+bash eval/eval_vllm.sh --model FLUX.1-dev --categories all
 
-DATA_PATH="flux_output"  # Directory of generated images
-
-
-# English Evaluation
-CSV_FILE="data/test_prompts_en.csv" # English test prompt file
-
-python eval/offline_model_en_eval.py \
-  --data_path "$DATA_PATH" \
-  --api_url "$API_URL" \
-  --csv_file "$CSV_FILE"
-
-# Chinese Evaluation
-CSV_FILE="data/test_prompts_zh.csv" # Chinese test prompt file
-
-python eval/offline_model_zh_eval.py \
-  --data_path "$DATA_PATH" \
-  --api_url "$API_URL" \
-  --csv_file "$CSV_FILE"
+# Custom server URL and resume
+bash eval/eval_vllm.sh --model FLUX.1-dev --categories en_long zh_long \
+    --api_url http://gpu-server:8080 --resume
 ```
 
-- After evaluation, scores across all dimensions will be **printed to the console**.  
-- A detailed `.csv` **results file** will also be saved in the `./results` directory.  
- 
+Run `bash eval/eval_vllm.sh -h` for all options.
 
-### 3. Calculate Score
+### 3. Output
 
-You can also load the results file to re-print or further analyze the scores. 
-```
-python eval/calculate_score.py
+Same as Gemini evaluation — results are saved to `./results/{model}_{category}.csv` and `./results/{model}_{category}.json`.
+
+### 4. Re-calculate Scores
+```bash
+python eval/src/calculate_score.py --result_csv ./results/FLUX.1-dev_en.csv --json_path ./results/FLUX.1-dev_en.json
 ```
 
 

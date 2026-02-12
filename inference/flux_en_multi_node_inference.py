@@ -10,13 +10,9 @@ from torch.utils.data.distributed import DistributedSampler
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 from diffusers import FluxPipeline
-import matplotlib.pyplot as plt
-from PIL import Image
-from diffusers import FluxPipeline
 from transformers import (
     CLIPTextModel, CLIPTokenizer,
     T5EncoderModel, T5TokenizerFast,
-    CLIPVisionModelWithProjection,
 )
 import pandas as pd
 from diffusers.models import AutoencoderKL, FluxTransformer2DModel
