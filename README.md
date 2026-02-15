@@ -49,6 +49,8 @@
 
 Please leave us a star ⭐ if you find our benchmark helpful.
 
+- [2026/02] 🔥🔥  **GPT-4o-1.5**, **Seedream-4.5**, and **FLUX.2-(klein/pro/flex/max)** are added to all 🏅Leaderboard.
+
 - [2025/11] 🔥🔥 **Nano Banana Pro**, **FLUX.2-dev** and **Z-Image** are added to all 🏅Leaderboard.
 
 - [2025/11] 🔥🔥🔥 We release the offline evaluation model [UniGenBench-EvalModel-qwen3vl-32b-v1](https://huggingface.co/CodeGoat24/UniGenBench-EvalModel-qwen3vl-32b-v1).
@@ -126,7 +128,7 @@ bash inference/flux_en_dist_infer.sh
 
 # Chinese Prompt
 bash inference/flux_zh_dist_infer.sh
-``` 
+```
 For each test prompt, **4 images** are generated and stored in the following folder structure:
 
 ```
@@ -139,7 +141,7 @@ output_directory/
   ├── 1_1.png
   ...
 ```
- 
+
 The file naming follows the pattern `promptID_imageID.png`
 
 
@@ -283,7 +285,7 @@ If you have any comments or questions, please open a new issue or feel free to c
 
 ## 🏅 Evaluation Leaderboards
 <div align="center">
-    
+
 ### English Short Prompt Evaluation
 
 <img width="1055" height="662" alt="en_short" src="https://github.com/user-attachments/assets/3f6ce637-aa05-4232-a17d-1852e6e77067" />
