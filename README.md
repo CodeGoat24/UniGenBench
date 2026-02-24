@@ -288,19 +288,20 @@ If you have any comments or questions, please open a new issue or feel free to c
 
 ### English Short Prompt Evaluation
 
-<img width="1055" height="662" alt="en_short" src="https://github.com/user-attachments/assets/3f6ce637-aa05-4232-a17d-1852e6e77067" />
+<img width="1000" height="762" alt="image" src="https://github.com/user-attachments/assets/0e7dd2d2-23a4-4a0d-9722-dd1baa275550" />
 
 ### English Long Prompt Evaluation
 
-<img width="1055" height="662" alt="en_long" src="https://github.com/user-attachments/assets/20df3fae-e6be-4546-b75b-c4d52d8ba5c4" />
+<img width="1000" height="762" alt="image" src="https://github.com/user-attachments/assets/91e1169a-7cb6-4890-b094-098aa38d3ff6" />
 
 ### Chinese Short Prompt Evaluation
 
-<img width="1055" height="662" alt="zh_short" src="https://github.com/user-attachments/assets/ac29a9eb-b839-4764-bd48-517d523751ca" />
+<img width="1055" height="662" alt="image" src="https://github.com/user-attachments/assets/ac93001d-8633-4932-901e-fc85bc113e7d" />
+
 
 ### Chinese Long Prompt Evaluation
 
-<img width="1055" height="662" alt="zh_long" src="https://github.com/user-attachments/assets/e886f3eb-cef2-4a68-af23-f4e9b4059106" />
+<img width="1055" height="662" alt="image" src="https://github.com/user-attachments/assets/70603b39-3a18-4bbf-85b1-4180081a6a81" />
 
 
 
