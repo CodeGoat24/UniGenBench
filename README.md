@@ -48,6 +48,7 @@
 📝 **To add your own model to the leaderboard**, please send an Email to [Yibin Wang](https://codegoat24.github.io/), then we will help with the evaluation and updating the leaderboard.
 
 Please leave us a star ⭐ if you find our benchmark helpful.
+- [2026/03] 🔥🔥  We are excited to see PKU & ByteDance Seed adopt our benchmark in [Enhancing Spatial Understanding in Image Generation via Reward Modeling](https://arxiv.org/pdf/2602.24233). Many thanks to all the contributors!
 
 - [2026/02] 🔥🔥  **GPT-4o-1.5**, **Seedream-4.5**, and **FLUX.2-(klein/pro/flex/max)** are added to all 🏅Leaderboard.
 
