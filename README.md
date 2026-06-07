@@ -49,6 +49,8 @@
 
 Please leave us a star ⭐ if you find our benchmark helpful.
 
+- [2026/06] 🔥🔥  We are excited to see **NVIDIA** adopt our benchmark in [Cosmos 3: Omnimodal World Models for Physical AI](https://arxiv.org/pdf/2606.02800). Many thanks to all the contributors!
+
 - [2026/04] 🔥🔥  We are excited to see **NVIDIA** & **Harvard** & **University of Toronto** adopt our benchmark in [Test-time scaling of diffusions with flow maps](https://arxiv.org/pdf/2511.22688). Many thanks to all the contributors!
 
 - [2026/03] 🔥🔥  We are excited to see **PKU** & **ByteDance** **Seed** adopt our benchmark in [Enhancing Spatial Understanding in Image Generation via Reward Modeling](https://arxiv.org/pdf/2602.24233). Many thanks to all the contributors!
