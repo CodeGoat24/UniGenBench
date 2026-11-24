@@ -1,4 +1,18 @@
+:root {
+  --project-page: #fbfaf7;
+  --project-surface: #f2f0ea;
+  --project-border: #e1ddd4;
+  --project-ink: #252724;
+  --project-muted: #55584f;
+  --project-link: #245471;
+}
+
+html {
+  background: var(--project-page);
+}
+
 body {
+  color: var(--project-ink);
   font-family: 'Noto Sans', sans-serif;
 }
 
@@ -72,7 +86,7 @@ body {
 }
 
 .publication-authors a {
-   color: hsl(204, 86%, 53%) !important;
+   color: var(--project-link);
 }
 
 .publication-authors a:hover {
@@ -151,17 +165,12 @@ body {
   }
 }
 
-.project-hero {
-  background: #f5f8fc;
-  border-bottom: 1px solid #dce4ec;
-}
-
 .project-hero .hero-body {
   padding: clamp(2.5rem, 6vw, 4.5rem) 1.25rem 1.5rem;
 }
 
 .project-hero .publication-title {
-  color: #172b43;
+  color: var(--project-ink);
   font-size: clamp(1.85rem, 4.5vw, 3rem);
   line-height: 1.12;
 }
@@ -176,28 +185,29 @@ body {
 }
 
 .research-nav {
-  border-top: 1px solid #dce4ec;
+  border-top: 1px solid var(--project-border);
   padding-top: 1rem;
 }
 
 .research-nav a {
-  color: #17528b;
+  color: var(--project-link);
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 0.2em;
 }
 
 .research-section {
-  padding: clamp(2.5rem, 6vw, 4rem) 1.25rem;
+  padding: 0 1.25rem;
   scroll-margin-top: 1rem;
 }
 
-.research-section-tinted {
-  background: #f5f8fc;
+.research-section > .container {
+  border-top: 1px solid var(--project-border);
+  padding-block: clamp(2.5rem, 6vw, 4rem);
 }
 
 .research-section .title {
-  color: #172b43;
+  color: var(--project-ink);
   margin-bottom: 0.75rem;
 }
 
@@ -220,17 +230,17 @@ body {
   display: flex;
   flex-direction: column-reverse;
   padding: 0.8rem 1rem;
-  border: 1px solid #dce4ec;
+  border: 1px solid var(--project-border);
   border-radius: 0.5rem;
-  background: #f5f8fc;
+  background: var(--project-surface);
 }
 
 .benchmark-stats dt {
-  color: #38495d;
+  color: var(--project-muted);
 }
 
 .benchmark-stats dd {
-  color: #172b43;
+  color: var(--project-ink);
   font-size: 1.75rem;
   font-weight: 700;
   line-height: 1.2;
@@ -252,13 +262,13 @@ body {
 .figure-image {
   display: block;
   padding: clamp(0.25rem, 1vw, 0.75rem);
-  border: 1px solid #dce4ec;
+  border: 1px solid var(--project-border);
   border-radius: 0.5rem;
   background: #fff;
 }
 
 .figure-image:hover {
-  border-color: #7290af;
+  border-color: #8a887e;
 }
 
 .figure-image img {
@@ -269,7 +279,7 @@ body {
 
 .research-figure figcaption,
 .table-note {
-  color: #4b5c70;
+  color: var(--project-muted);
   font-size: 0.9375rem;
 }
 
@@ -289,7 +299,7 @@ body {
 
 .table-scroll {
   overflow: auto;
-  border: 1px solid #dce4ec;
+  border: 1px solid var(--project-border);
   border-radius: 0.5rem;
 }
 
@@ -318,7 +328,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 1;
-  background: #e7eef6;
+  background: var(--project-surface);
 }
 
 .research-table :is(th, td):nth-child(n + 2) {
@@ -348,7 +358,7 @@ body {
 
 .hero-leaderboards p {
   margin-bottom: 0.5rem;
-  color: #172b43;
+  color: var(--project-ink);
   font-size: 1.25rem;
   font-weight: 700;
 }
@@ -358,25 +368,25 @@ body {
 }
 
 .leaderboard-links .button {
-  border-color: #a9bed3;
+  border-color: var(--project-border);
   background: #fff;
-  color: #17528b;
+  color: var(--project-link);
   font-weight: 600;
 }
 
 .leaderboard-links .button:hover {
-  border-color: #7290af;
-  background: #e7eef6;
+  border-color: #8a887e;
+  background: var(--project-surface);
 }
 
 .pipeline-details {
   margin-top: 1.5rem;
-  border-top: 1px solid #dce4ec;
+  border-top: 1px solid var(--project-border);
   padding-top: 1rem;
 }
 
 .pipeline-details summary {
-  color: #17528b;
+  color: var(--project-link);
   cursor: pointer;
   font-weight: 600;
 }
@@ -390,8 +400,14 @@ body {
 .figure-image:focus-visible,
 .table-scroll:focus-visible,
 .pipeline-details summary:focus-visible {
-  outline: 2px solid #17528b;
+  outline: 2px solid var(--project-link);
   outline-offset: 3px;
+}
+
+#BibTeX pre {
+  border: 1px solid var(--project-border);
+  border-radius: 0.5rem;
+  background: var(--project-surface);
 }
 
 @media screen and (max-width: 640px) {
