@@ -242,6 +242,11 @@ body {
 
 .research-figure-narrow .figure-image {
   max-width: 42rem;
+  margin-inline: auto;
+}
+
+.research-figure-narrow figcaption {
+  text-align: center;
 }
 
 .figure-image {
@@ -316,8 +321,7 @@ body {
   background: #e7eef6;
 }
 
-.research-table td,
-.research-table th[scope="col"]:not(:first-child) {
+.research-table :is(th, td):nth-child(n + 2) {
   text-align: right;
 }
 
@@ -345,6 +349,7 @@ body {
 .hero-leaderboards p {
   margin-bottom: 0.5rem;
   color: #172b43;
+  font-size: 1.25rem;
   font-weight: 700;
 }
 
