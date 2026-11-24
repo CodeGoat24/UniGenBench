@@ -9,6 +9,8 @@
 
 [UnifiedReward](https://github.com/CodeGoat24/UnifiedReward) Team
 
+**Accepted by TMLR**
+
 <a href="https://arxiv.org/pdf/2508.20751">
 <img src='https://img.shields.io/badge/arXiv-UniGenBench-blue' alt='Paper PDF'></a>
 
@@ -80,7 +82,7 @@ Please leave us a star ⭐ if you find our benchmark helpful.
 We propose <b>UniGenBench</b>, a unified and versatile benchmark for image generation that integrates diverse prompt themes with a comprehensive suite of fine-grained evaluation criteria. 
 
 
-<img width="994" height="745" alt="image" src="https://github.com/user-attachments/assets/9b281b2c-d0b0-4c34-8f47-2772a62b7bb9" />
+<img width="994" alt="UniGenBench++ overview of prompt coverage, testpoint evaluation, and model results" src="docs/static/images/benchmark-overview.webp" />
 
 
 ### ✨ Highlights:
@@ -102,7 +104,9 @@ We propose <b>UniGenBench</b>, a unified and versatile benchmark for image gener
 
 
 
-![](assets/pipeline.jpg)
+<p align="center">
+  <img width="640" alt="Benchmark construction, offline evaluator training, and evaluation examples" src="docs/static/images/evaluation-pipeline.webp" />
+</p>
 
 
 ## 📑 Prompt Introduction
