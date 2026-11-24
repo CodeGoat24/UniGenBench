@@ -171,17 +171,16 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem 1.1rem;
 }
 
 .research-nav {
-  justify-content: center;
   border-top: 1px solid #dce4ec;
   padding-top: 1rem;
 }
 
-.research-nav a,
-.leaderboard-links a {
+.research-nav a {
   color: #17528b;
   font-weight: 600;
   text-decoration: underline;
@@ -203,7 +202,6 @@ body {
 }
 
 .section-intro {
-  max-width: 75ch;
   margin-bottom: 1.5rem;
 }
 
@@ -242,7 +240,7 @@ body {
   margin: 0;
 }
 
-.research-figure-narrow {
+.research-figure-narrow .figure-image {
   max-width: 42rem;
 }
 
@@ -340,12 +338,30 @@ body {
   font-weight: 600;
 }
 
-.leaderboard-links {
-  margin-top: 1rem;
+.hero-leaderboards {
+  margin: 0.25rem 0 1.25rem;
 }
 
-.leaderboard-links span {
+.hero-leaderboards p {
+  margin-bottom: 0.5rem;
+  color: #172b43;
   font-weight: 700;
+}
+
+.leaderboard-links {
+  gap: 0.5rem;
+}
+
+.leaderboard-links .button {
+  border-color: #a9bed3;
+  background: #fff;
+  color: #17528b;
+  font-weight: 600;
+}
+
+.leaderboard-links .button:hover {
+  border-color: #7290af;
+  background: #e7eef6;
 }
 
 .pipeline-details {
@@ -380,6 +396,11 @@ body {
 
   .figure-pair {
     grid-template-columns: 1fr;
+  }
+
+  .leaderboard-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, max-content));
   }
 
   .research-section .title.is-3 {

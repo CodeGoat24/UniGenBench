@@ -109,12 +109,21 @@
               </span>
             </div>
           </div>
+          <nav class="hero-leaderboards" aria-labelledby="leaderboards-label">
+            <p id="leaderboards-label">Live leaderboards</p>
+            <div class="leaderboard-links">
+              <a class="button is-rounded" href="https://huggingface.co/spaces/CodeGoat24/UniGenBench_Leaderboard">English short</a>
+              <a class="button is-rounded" href="https://huggingface.co/spaces/CodeGoat24/UniGenBench_Leaderboard_English_Long">English long</a>
+              <a class="button is-rounded" href="https://huggingface.co/spaces/CodeGoat24/UniGenBench_Leaderboard_Chinese">Chinese short</a>
+              <a class="button is-rounded" href="https://huggingface.co/spaces/CodeGoat24/UniGenBench_Leaderboard_Chinese_Long">Chinese long</a>
+            </div>
+          </nav>
           <nav class="research-nav" aria-label="On this page">
             <a href="#overview">Overview</a>
+            <a href="#examples">Examples</a>
             <a href="#results">Results</a>
             <a href="#evaluator">Evaluator</a>
             <a href="#diagnostics">Diagnostics</a>
-            <a href="#examples">Examples</a>
           </nav>
         </div>
       </div>
@@ -144,10 +153,33 @@
     </div>
   </section>
 
-  <section class="section research-section research-section-tinted" id="results" aria-labelledby="results-heading">
+  <section class="section research-section research-section-tinted" id="examples" aria-labelledby="examples-heading">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3" id="examples-heading">Benchmark data and examples</h2>
+      <h3 class="title is-5">Qualitative examples</h3>
+      <figure class="research-figure">
+        <a class="figure-image" href="./static/images/qualitative-examples.webp" target="_blank" rel="noopener" aria-label="Open the full-size qualitative examples">
+          <img src="./static/images/qualitative-examples.webp" width="2000" height="1654" loading="lazy" decoding="async" alt="Generated images illustrating evaluation criteria for actions, relationships, composition, grammar, world knowledge, text, attributes, layout, and logic">
+        </a>
+        <figcaption>Generated images and sample testpoints across the benchmark’s semantic dimensions.</figcaption>
+      </figure>
+
+      <div class="research-subsection">
+        <h3 class="title is-5">Prompt and testpoint statistics</h3>
+        <figure class="research-figure">
+          <a class="figure-image" href="./static/images/benchmark-statistics.webp" target="_blank" rel="noopener" aria-label="Open the full-size benchmark statistics">
+            <img src="./static/images/benchmark-statistics.webp" width="1800" height="874" loading="lazy" decoding="async" alt="English and Chinese word clouds and distributions of prompt lengths and testpoints per prompt">
+          </a>
+          <figcaption>Word clouds by language and prompt length, with distributions of prompt length and testpoints per prompt.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section research-section" id="results" aria-labelledby="results-heading">
     <div class="container is-max-desktop">
       <h2 class="title is-3" id="results-heading">Benchmark results</h2>
-      <p class="section-intro">In the TMLR paper, <strong>GPT-4o-1.5</strong> leads all four settings with a 95.73 overall score, followed by <strong>Nano Banana Pro</strong> at 94.04. <strong>FLUX.2-dev</strong> leads the open models at 85.66.</p>
+      <p class="section-intro"><strong>GPT-4o-1.5</strong> scored highest in all four settings, averaging 95.73 overall. <strong>Nano Banana Pro</strong> came second at 94.04, and <strong>FLUX.2-dev</strong> led the open models at 85.66.</p>
 
       <h3 class="title is-5" id="scores-heading">Scores across all four settings</h3>
       <p class="table-note" id="scores-note">The 44 models below were evaluated in every setting. Overall is the equal-weight average of the four scores. EN and ZH denote English and Chinese. The best and second-best scores in each column are bold and underlined, respectively. Scroll to see all models and columns.</p>
@@ -212,18 +244,10 @@
           </tbody>
         </table>
       </div>
-
-      <nav class="leaderboard-links" aria-label="Live leaderboards">
-        <span>Live leaderboards</span>
-        <a href="https://huggingface.co/spaces/CodeGoat24/UniGenBench_Leaderboard">English short</a>
-        <a href="https://huggingface.co/spaces/CodeGoat24/UniGenBench_Leaderboard_English_Long">English long</a>
-        <a href="https://huggingface.co/spaces/CodeGoat24/UniGenBench_Leaderboard_Chinese">Chinese short</a>
-        <a href="https://huggingface.co/spaces/CodeGoat24/UniGenBench_Leaderboard_Chinese_Long">Chinese long</a>
-      </nav>
     </div>
   </section>
 
-  <section class="section research-section" id="evaluator" aria-labelledby="evaluator-heading">
+  <section class="section research-section research-section-tinted" id="evaluator" aria-labelledby="evaluator-heading">
     <div class="container is-max-desktop">
       <h2 class="title is-3" id="evaluator-heading">Evaluator validation</h2>
       <h3 class="title is-5" id="human-heading">Agreement with human judgments</h3>
@@ -280,7 +304,7 @@
     </div>
   </section>
 
-  <section class="section research-section research-section-tinted" id="diagnostics" aria-labelledby="diagnostics-heading">
+  <section class="section research-section" id="diagnostics" aria-labelledby="diagnostics-heading">
     <div class="container is-max-desktop">
       <h2 class="title is-3" id="diagnostics-heading">Capability diagnostics</h2>
       <p class="section-intro">Leading models score consistently well on style and world knowledge. Logical reasoning, grammar, composition, and text generation still show substantial differences.</p>
@@ -300,29 +324,6 @@
             <img src="./static/images/residual-capabilities.webp" width="1800" height="1412" loading="lazy" decoding="async" alt="Heatmap of the difference between observed and predicted scores for each model and fine-grained dimension">
           </a>
           <figcaption>Each cell shows the observed score minus the score predicted from the model’s performance on the other 26 dimensions, in percentage points. This highlights relative strengths and weaknesses among models with similar overall capability.</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <section class="section research-section" id="examples" aria-labelledby="examples-heading">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3" id="examples-heading">Benchmark data and examples</h2>
-      <h3 class="title is-5">Qualitative examples</h3>
-      <figure class="research-figure">
-        <a class="figure-image" href="./static/images/qualitative-examples.webp" target="_blank" rel="noopener" aria-label="Open the full-size qualitative examples">
-          <img src="./static/images/qualitative-examples.webp" width="2000" height="1654" loading="lazy" decoding="async" alt="Generated images illustrating evaluation criteria for actions, relationships, composition, grammar, world knowledge, text, attributes, layout, and logic">
-        </a>
-        <figcaption>Generated images and sample testpoints across the benchmark’s semantic dimensions.</figcaption>
-      </figure>
-
-      <div class="research-subsection">
-        <h3 class="title is-5">Prompt and testpoint statistics</h3>
-        <figure class="research-figure">
-          <a class="figure-image" href="./static/images/benchmark-statistics.webp" target="_blank" rel="noopener" aria-label="Open the full-size benchmark statistics">
-            <img src="./static/images/benchmark-statistics.webp" width="1800" height="874" loading="lazy" decoding="async" alt="English and Chinese word clouds and distributions of prompt lengths and testpoints per prompt">
-          </a>
-          <figcaption>Word clouds by language and prompt length, with distributions of prompt length and testpoints per prompt.</figcaption>
         </figure>
       </div>
     </div>
