@@ -1,89 +1,28 @@
 <!DOCTYPE html>
 
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style></style>
-  
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
   <meta name="description" content="UniGenBench++: A Unified Semantic Evaluation Benchmark for Text-to-Image Generation">
   <meta name="keywords" content="Text-to-image Generation,Semantic Evaluation, Benchmark">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UniGenBench++</title>
 
-
   <link rel="shortcut icon" href="https://picx.zhimg.com/v2-cb40b1f8c3125f3cfb9a4538e1c0f2b7_l.jpg?source=32738c0c" type="image/x-icon">
-  <link href="./static/css" rel="stylesheet">
 
   <link rel="stylesheet" href="./static/bulma.min.css">
-  <link rel="stylesheet" href="./static/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/fontawesome.all.min.css">
-  <link rel="stylesheet" href="./static/academicons.min.css">
   <link rel="stylesheet" href="./static/index.css">
-  <link rel="stylesheet" href="./static/leaderboard.css">
-
-  <script type="text/javascript" src="./static/sort-table.js" defer=""></script>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer="" src="./static/fontawesome.all.min.js"></script>
-  <script src="./static/bulma-carousel.min.js"></script>
-  <script src="./static/bulma-slider.min.js"></script>
-  <script src="./static/explorer-index.js"></script>
-  <script src="./static/question_card.js"></script>
-
-  <script src="./static/leaderboard_testmini.js"></script>  
-  <script src="./static/output_folders.js" defer=""></script>
-  <script src="./static/model_scores.js" defer=""></script>
-
-  <script src="./static/data_public.js" defer=""></script>
-
-  <style>
-      .center-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            margin-top: -20px;
-        }
-    .node {
-      fill: #f8f1e4;
-      stroke: #000;
-      stroke-width: 1;
-      rx: 10;
-      ry: 10;
-    }
-    .node text {
-      font-size: 14px;
-      text-anchor: middle;
-    }
-    .link {
-      fill: none;
-      stroke: #000;
-      stroke-width: 2;
-    }
-    .badge {
-      font-size: 12px;
-    }
-  </style>
-
+  <script defer src="./static/fontawesome.all.min.js"></script>
 </head>
 <body>
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-</nav>
-
-
-<section class="hero">
+<section class="hero project-hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title is-bold" style="display: inline-block; margin-right: 0px;">
-            <span style="vertical-align: middle">UniGenBench++: A Unified Semantic Evaluation Benchmark for Text-to-Image Generation</span>
+          <h1 class="title is-1 publication-title is-bold">
+            UniGenBench++: A Unified Semantic Evaluation Benchmark for Text-to-Image Generation
           </h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
@@ -168,230 +107,228 @@
                   <span>Eval Images</span>
                   </a>
               </span>
-              <br>
-              <span class="link-block">
-                <a href="https://huggingface.co/spaces/CodeGoat24/UniGenBench_Leaderboard" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <!-- <i class="far fa-images"></i> -->
-                      <p style="font-size:18px">🏅</p>
-                      <!-- 🔗 -->
-                  </span>
-                  <span>EN Short</span>
-                </a>
-              </span> 
-              <span class="link-block">
-                <a href="https://huggingface.co/spaces/CodeGoat24/UniGenBench_Leaderboard_English_Long" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <!-- <i class="far fa-images"></i> -->
-                      <p style="font-size:18px">🏅</p>
-                      <!-- 🔗 -->
-                  </span>
-                  <span>EN Long</span>
-                </a>
-              </span> 
-            <span class="link-block">
-                <a href="https://huggingface.co/spaces/CodeGoat24/UniGenBench_Leaderboard_Chinese" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <!-- <i class="far fa-images"></i> -->
-                      <p style="font-size:18px">🏅</p>
-                      <!-- 🔗 -->
-                  </span>
-                  <span>ZH Short</span>
-                </a>
-              </span> 
-              <span class="link-block">
-                <a href="https://huggingface.co/spaces/CodeGoat24/UniGenBench_Leaderboard_Chinese_Long" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <!-- <i class="far fa-images"></i> -->
-                      <p style="font-size:18px">🏅</p>
-                      <!-- 🔗 -->
-                  </span>
-                  <span>ZH Long</span>
-                </a>
-              </span> 
             </div>
-
           </div>
+          <nav class="research-nav" aria-label="On this page">
+            <a href="#overview">Overview</a>
+            <a href="#results">Results</a>
+            <a href="#evaluator">Evaluator</a>
+            <a href="#diagnostics">Diagnostics</a>
+            <a href="#examples">Examples</a>
+          </nav>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- Begin Teaser -->
-<div>
-<section class="section">
-  <div class="container is-max-desktop" >
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Overview</h2>
-
-      </div>
-    </div>
-    <div class="columns is-centered">
-      <div class="content has-text-centered" style="margin-top: 1cm;">
-        <img src="./static/images/teaser.png" alt="pipeline" >
-      </div>
-    </div>
-    
-    
-
-  </div>
-  </div>
-
-
-
-</section>
-  <section class="hero teaser">
+<main>
+  <section class="section research-section" id="overview" aria-labelledby="overview-heading">
     <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Benchmark Statistics</h2>
+      <h2 class="title is-3" id="overview-heading">Benchmark overview</h2>
+      <p class="section-intro">UniGenBench++ measures how faithfully text-to-image models follow individual requirements in a prompt. Each prompt is available in English and Chinese, in short and long forms.</p>
 
-      </div>
+      <dl class="benchmark-stats">
+        <div><dt>Prompt concepts</dt><dd>600</dd></div>
+        <div><dt>Prompt themes</dt><dd>5</dd></div>
+        <div><dt>Primary dimensions</dt><dd>10</dd></div>
+        <div><dt>Fine-grained dimensions</dt><dd>27</dd></div>
+      </dl>
+
+      <figure class="research-figure">
+        <a class="figure-image" href="./static/images/benchmark-overview.webp" target="_blank" rel="noopener" aria-label="Open the full-size benchmark overview">
+          <img src="./static/images/benchmark-overview.webp" width="2000" height="1507" decoding="async" alt="Prompt themes and testpoint coverage, a worked example of image evaluation, and model performance profiles across four settings">
+        </a>
+        <figcaption>Prompt coverage, a worked testpoint evaluation, and model profiles across the four language and length settings. Select any figure to open it at full size.</figcaption>
+      </figure>
     </div>
-      <div class="content has-text-centered">
-        <img src="static/images/word_cloud.png" alt="data-overview" width="800" height="600">
+  </section>
+
+  <section class="section research-section research-section-tinted" id="results" aria-labelledby="results-heading">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3" id="results-heading">Benchmark results</h2>
+      <p class="section-intro">In the TMLR paper, <strong>GPT-4o-1.5</strong> leads all four settings with a 95.73 overall score, followed by <strong>Nano Banana Pro</strong> at 94.04. <strong>FLUX.2-dev</strong> leads the open models at 85.66.</p>
+
+      <h3 class="title is-5" id="scores-heading">Scores across all four settings</h3>
+      <p class="table-note" id="scores-note">The 44 models below were evaluated in every setting. Overall is the equal-weight average of the four scores. EN and ZH denote English and Chinese. The best and second-best scores in each column are bold and underlined, respectively. Scroll to see all models and columns.</p>
+      <div class="table-scroll model-scores" tabindex="0" role="region" aria-labelledby="scores-heading" aria-describedby="scores-note">
+        <table class="table is-striped is-fullwidth research-table">
+          <thead>
+            <tr>
+              <th scope="col">Model</th>
+              <th scope="col">Availability</th>
+              <th scope="col">EN short</th>
+              <th scope="col">EN long</th>
+              <th scope="col">ZH short</th>
+              <th scope="col">ZH long</th>
+              <th scope="col">Overall</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">GPT-4o-1.5</th><td>Closed</td><td><strong>95.77</strong></td><td><strong>95.41</strong></td><td><strong>95.62</strong></td><td><strong>96.12</strong></td><td><strong>95.73</strong></td></tr>
+            <tr><th scope="row">Nano Banana Pro</th><td>Closed</td><td><u>92.72</u></td><td><u>94.20</u></td><td><u>93.82</u></td><td><u>95.42</u></td><td><u>94.04</u></td></tr>
+            <tr><th scope="row">GPT-4o</th><td>Closed</td><td>92.48</td><td>92.63</td><td>91.02</td><td>90.51</td><td>91.66</td></tr>
+            <tr><th scope="row">Seedream-4.5</th><td>Closed</td><td>89.70</td><td>91.38</td><td>89.58</td><td>93.12</td><td>90.94</td></tr>
+            <tr><th scope="row">FLUX-2-Max</th><td>Closed</td><td>90.85</td><td>92.18</td><td>88.14</td><td>89.80</td><td>90.24</td></tr>
+            <tr><th scope="row">FLUX-2-Flex</th><td>Closed</td><td>89.35</td><td>90.43</td><td>87.62</td><td>89.19</td><td>89.15</td></tr>
+            <tr><th scope="row">Seedream-4.0</th><td>Closed</td><td>87.35</td><td>89.77</td><td>87.31</td><td>90.35</td><td>88.69</td></tr>
+            <tr><th scope="row">FLUX-2-Pro</th><td>Closed</td><td>88.35</td><td>90.10</td><td>85.40</td><td>87.11</td><td>87.74</td></tr>
+            <tr><th scope="row">Imagen-4.0-Ultra</th><td>Closed</td><td>91.65</td><td>90.95</td><td>83.08</td><td>83.86</td><td>87.39</td></tr>
+            <tr><th scope="row">FLUX.2-dev</th><td>Open</td><td>84.76</td><td>90.31</td><td>81.44</td><td>86.12</td><td>85.66</td></tr>
+            <tr><th scope="row">Nano Banana</th><td>Closed</td><td>87.29</td><td>88.82</td><td>80.45</td><td>83.17</td><td>84.93</td></tr>
+            <tr><th scope="row">Z-Image</th><td>Open</td><td>78.10</td><td>86.77</td><td>81.69</td><td>89.17</td><td>83.93</td></tr>
+            <tr><th scope="row">Imagen-4.0</th><td>Closed</td><td>85.84</td><td>85.34</td><td>79.52</td><td>79.90</td><td>82.65</td></tr>
+            <tr><th scope="row">Qwen-Image</th><td>Open</td><td>78.36</td><td>83.94</td><td>81.04</td><td>86.91</td><td>82.56</td></tr>
+            <tr><th scope="row">Seedream-3.0</th><td>Closed</td><td>78.41</td><td>80.99</td><td>81.68</td><td>86.14</td><td>81.80</td></tr>
+            <tr><th scope="row">Wan2.5</th><td>Closed</td><td>77.87</td><td>84.56</td><td>78.86</td><td>84.36</td><td>81.41</td></tr>
+            <tr><th scope="row">Hunyuan-Image-2.1</th><td>Open</td><td>74.64</td><td>82.19</td><td>77.76</td><td>87.01</td><td>80.40</td></tr>
+            <tr><th scope="row">FLUX.2-Klein-base-9b</th><td>Open</td><td>79.35</td><td>86.45</td><td>73.81</td><td>81.41</td><td>80.25</td></tr>
+            <tr><th scope="row">FLUX.2-Klein-9b</th><td>Open</td><td>78.28</td><td>85.06</td><td>75.19</td><td>81.74</td><td>80.07</td></tr>
+            <tr><th scope="row">LongCat-Image</th><td>Open</td><td>73.54</td><td>81.28</td><td>75.97</td><td>83.14</td><td>78.48</td></tr>
+            <tr><th scope="row">Z-Image-Turbo</th><td>Open</td><td>71.40</td><td>80.72</td><td>74.18</td><td>83.69</td><td>77.50</td></tr>
+            <tr><th scope="row">FLUX-Kontext-Max</th><td>Closed</td><td>80.00</td><td>80.88</td><td>71.85</td><td>75.24</td><td>76.99</td></tr>
+            <tr><th scope="row">Echo-4o</th><td>Open</td><td>69.12</td><td>76.41</td><td>72.40</td><td>78.31</td><td>74.06</td></tr>
+            <tr><th scope="row">GLM-Image</th><td>Open</td><td>67.23</td><td>75.48</td><td>70.57</td><td>79.11</td><td>73.10</td></tr>
+            <tr><th scope="row">DALL-E-3</th><td>Closed</td><td>68.85</td><td>70.82</td><td>67.93</td><td>71.16</td><td>69.69</td></tr>
+            <tr><th scope="row">Bagel</th><td>Open</td><td>59.91</td><td>71.26</td><td>65.69</td><td>75.75</td><td>68.15</td></tr>
+            <tr><th scope="row">Wan2.2-Plus</th><td>Closed</td><td>64.82</td><td>68.76</td><td>66.96</td><td>70.05</td><td>67.65</td></tr>
+            <tr><th scope="row">OmniGen2</th><td>Open</td><td>63.09</td><td>71.39</td><td>63.20</td><td>70.75</td><td>67.11</td></tr>
+            <tr><th scope="row">Lumina-DiMOO</th><td>Open</td><td>71.12</td><td>71.81</td><td>58.35</td><td>63.80</td><td>66.27</td></tr>
+            <tr><th scope="row">HiDream-I1-Full</th><td>Open</td><td>71.36</td><td>74.25</td><td>50.65</td><td>50.70</td><td>61.74</td></tr>
+            <tr><th scope="row">CogView4</th><td>Open</td><td>56.00</td><td>67.68</td><td>55.14</td><td>68.09</td><td>61.73</td></tr>
+            <tr><th scope="row">OneCAT</th><td>Open</td><td>58.28</td><td>62.80</td><td>56.77</td><td>61.40</td><td>59.81</td></tr>
+            <tr><th scope="row">BLIP3-o</th><td>Open</td><td>59.57</td><td>61.01</td><td>59.25</td><td>59.25</td><td>59.77</td></tr>
+            <tr><th scope="row">Recraft</th><td>Closed</td><td>62.63</td><td>60.93</td><td>57.67</td><td>56.90</td><td>59.53</td></tr>
+            <tr><th scope="row">X-Omni</th><td>Open</td><td>53.77</td><td>67.00</td><td>53.69</td><td>62.18</td><td>59.16</td></tr>
+            <tr><th scope="row">BLIP3-o-Next</th><td>Open</td><td>65.15</td><td>71.03</td><td>44.48</td><td>54.55</td><td>58.80</td></tr>
+            <tr><th scope="row">Kolors</th><td>Open</td><td>46.07</td><td>53.60</td><td>58.80</td><td>65.12</td><td>55.90</td></tr>
+            <tr><th scope="row">Janus-Pro</th><td>Open</td><td>61.36</td><td>71.11</td><td>30.83</td><td>60.21</td><td>55.88</td></tr>
+            <tr><th scope="row">Hunyuan-DiT</th><td>Open</td><td>51.38</td><td>54.88</td><td>53.36</td><td>55.57</td><td>53.80</td></tr>
+            <tr><th scope="row">Janus</th><td>Open</td><td>51.60</td><td>60.37</td><td>30.98</td><td>33.63</td><td>44.14</td></tr>
+            <tr><th scope="row">MMaDA</th><td>Open</td><td>41.35</td><td>40.10</td><td>44.00</td><td>50.61</td><td>44.02</td></tr>
+            <tr><th scope="row">UniWorld-V1</th><td>Open</td><td>63.11</td><td>69.60</td><td>15.21</td><td>21.50</td><td>42.35</td></tr>
+            <tr><th scope="row">Emu3</th><td>Open</td><td>45.42</td><td>50.95</td><td>33.91</td><td>35.95</td><td>41.56</td></tr>
+            <tr><th scope="row">Janus-Flow</th><td>Open</td><td>47.10</td><td>54.80</td><td>20.93</td><td>23.09</td><td>36.48</td></tr>
+          </tbody>
+        </table>
       </div>
-      <div class="hero-body">
-        <h2 class="subtitle has-text-justified">
-          <p class="has-text-centered"><b>Benchmark Statistics.</b><br>(a) Word clouds for English and Chinese prompts in both short and long forms; (b) overall prompt length distribution; and (c) distribution of testpoint counts per prompt for short versus long versions.</p>
-        </h2>
+
+      <nav class="leaderboard-links" aria-label="Live leaderboards">
+        <span>Live leaderboards</span>
+        <a href="https://huggingface.co/spaces/CodeGoat24/UniGenBench_Leaderboard">English short</a>
+        <a href="https://huggingface.co/spaces/CodeGoat24/UniGenBench_Leaderboard_English_Long">English long</a>
+        <a href="https://huggingface.co/spaces/CodeGoat24/UniGenBench_Leaderboard_Chinese">Chinese short</a>
+        <a href="https://huggingface.co/spaces/CodeGoat24/UniGenBench_Leaderboard_Chinese_Long">Chinese long</a>
+      </nav>
+    </div>
+  </section>
+
+  <section class="section research-section" id="evaluator" aria-labelledby="evaluator-heading">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3" id="evaluator-heading">Evaluator validation</h2>
+      <h3 class="title is-5" id="human-heading">Agreement with human judgments</h3>
+      <p class="section-intro">Five annotators labeled 1,200 prompt–image–testpoint triplets. Gemini-2.5-Pro agreed with the human majority on <strong>86%</strong> of the triplets. The rankings of the 10 models in this study had a Spearman correlation of <strong>0.96</strong> (95% CI 0.89–0.99).</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-labelledby="human-heading" aria-describedby="human-note">
+        <table class="table is-striped is-fullwidth research-table">
+          <thead>
+            <tr>
+              <th scope="col">Evaluator</th>
+              <th scope="col">Accuracy</th>
+              <th scope="col">Macro-F1</th>
+              <th scope="col">Cohen’s κ</th>
+              <th scope="col">Coverage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Human annotator baseline</th><td>94.8%</td><td>0.89</td><td>0.78</td><td>97%</td></tr>
+            <tr><th scope="row">Qwen2.5-VL-72B</th><td>76%</td><td>0.60</td><td>0.21</td><td>100%</td></tr>
+            <tr><th scope="row">Offline evaluator</th><td>83%</td><td>0.78</td><td>0.57</td><td>100%</td></tr>
+            <tr><th scope="row">Gemini-2.5-Pro</th><td>86%</td><td>0.77</td><td>0.53</td><td>100%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note" id="human-note">Automatic evaluators are compared with the five-annotator majority. The human baseline holds out one annotator at a time and scores cases where the other four form a strict majority.</p>
+
+      <div class="research-subsection">
+        <h3 class="title is-5">Agreement with Gemini by dimension</h3>
+        <p class="section-intro">The trained offline evaluator matches Gemini-2.5-Pro judgments more closely than the Qwen2.5-VL-72B baseline across the four prompt settings.</p>
+        <div class="figure-pair">
+          <figure class="research-figure">
+            <a class="figure-image" href="./static/images/evaluator-short-prompts.webp" target="_blank" rel="noopener" aria-label="Open the full-size short-prompt evaluator comparison">
+              <img src="./static/images/evaluator-short-prompts.webp" width="1500" height="1171" loading="lazy" decoding="async" alt="Bar charts of agreement with Gemini for each evaluated dimension on English and Chinese short prompts">
+            </a>
+            <figcaption>English and Chinese short prompts</figcaption>
+          </figure>
+          <figure class="research-figure">
+            <a class="figure-image" href="./static/images/evaluator-long-prompts.webp" target="_blank" rel="noopener" aria-label="Open the full-size long-prompt evaluator comparison">
+              <img src="./static/images/evaluator-long-prompts.webp" width="1500" height="1156" loading="lazy" decoding="async" alt="Bar charts of agreement with Gemini for each evaluated dimension on English and Chinese long prompts">
+            </a>
+            <figcaption>English and Chinese long prompts</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <details class="pipeline-details">
+        <summary>Benchmark construction and offline evaluator training</summary>
+        <figure class="research-figure research-figure-narrow">
+          <a class="figure-image" href="./static/images/evaluation-pipeline.webp" target="_blank" rel="noopener" aria-label="Open the full-size benchmark and evaluator pipeline">
+            <img src="./static/images/evaluation-pipeline.webp" width="1440" height="2039" loading="lazy" decoding="async" alt="Pipeline for constructing prompts and testpoints, training the offline evaluator, and evaluating example images in English and Chinese">
+          </a>
+          <figcaption>How prompts and testpoints are constructed, how the offline evaluator is trained, and how it scores sample images in both languages.</figcaption>
+        </figure>
+      </details>
+    </div>
+  </section>
+
+  <section class="section research-section research-section-tinted" id="diagnostics" aria-labelledby="diagnostics-heading">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3" id="diagnostics-heading">Capability diagnostics</h2>
+      <p class="section-intro">Leading models score consistently well on style and world knowledge. Logical reasoning, grammar, composition, and text generation still show substantial differences.</p>
+
+      <h3 class="title is-5">Testpoint difficulty</h3>
+      <figure class="research-figure">
+        <a class="figure-image" href="./static/images/testpoint-difficulty.webp" target="_blank" rel="noopener" aria-label="Open the full-size testpoint difficulty analysis">
+          <img src="./static/images/testpoint-difficulty.webp" width="1800" height="698" loading="lazy" decoding="async" alt="Distribution of testpoint pass rates and the performance gap between top and bottom model groups at different pass rates">
+        </a>
+        <figcaption>Testpoints of intermediate difficulty generally separate the top and bottom 27% of models the most.</figcaption>
+      </figure>
+
+      <div class="research-subsection">
+        <h3 class="title is-5">Model capability profiles</h3>
+        <figure class="research-figure">
+          <a class="figure-image" href="./static/images/residual-capabilities.webp" target="_blank" rel="noopener" aria-label="Open the full-size model capability profiles">
+            <img src="./static/images/residual-capabilities.webp" width="1800" height="1412" loading="lazy" decoding="async" alt="Heatmap of the difference between observed and predicted scores for each model and fine-grained dimension">
+          </a>
+          <figcaption>Each cell shows the observed score minus the score predicted from the model’s performance on the other 26 dimensions, in percentage points. This highlights relative strengths and weaknesses among models with similar overall capability.</figcaption>
+        </figure>
       </div>
     </div>
   </section>
-</div>
 
-
-
-
-
-
-
-
-</div>
-<!-- End Teaser -->
-
-<div>
-
-  <section class="hero teaser">
+  <section class="section research-section" id="examples" aria-labelledby="examples-heading">
     <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Evaluation Dimensions</h2>
+      <h2 class="title is-3" id="examples-heading">Benchmark data and examples</h2>
+      <h3 class="title is-5">Qualitative examples</h3>
+      <figure class="research-figure">
+        <a class="figure-image" href="./static/images/qualitative-examples.webp" target="_blank" rel="noopener" aria-label="Open the full-size qualitative examples">
+          <img src="./static/images/qualitative-examples.webp" width="2000" height="1654" loading="lazy" decoding="async" alt="Generated images illustrating evaluation criteria for actions, relationships, composition, grammar, world knowledge, text, attributes, layout, and logic">
+        </a>
+        <figcaption>Generated images and sample testpoints across the benchmark’s semantic dimensions.</figcaption>
+      </figure>
 
-
-      </div>
-    </div>
-      <div class="content has-text-centered">
-        <img src="static/images/testpoint_cases.png" alt="data-overview" width="1000" height="800">
-      </div>
-      <div class="hero-body">
-        <h2 class="subtitle has-text-justified">
-          <p class="has-text-centered"><b>Qualitative Cases.</b><br>We present qualitative examples of T2I models evaluated across our specified dimensions.</p>
-        </h2>
+      <div class="research-subsection">
+        <h3 class="title is-5">Prompt and testpoint statistics</h3>
+        <figure class="research-figure">
+          <a class="figure-image" href="./static/images/benchmark-statistics.webp" target="_blank" rel="noopener" aria-label="Open the full-size benchmark statistics">
+            <img src="./static/images/benchmark-statistics.webp" width="1800" height="874" loading="lazy" decoding="async" alt="English and Chinese word clouds and distributions of prompt lengths and testpoints per prompt">
+          </a>
+          <figcaption>Word clouds by language and prompt length, with distributions of prompt length and testpoints per prompt.</figcaption>
+        </figure>
       </div>
     </div>
   </section>
-</div>
 
-
-
-<section class="section">
-  <div class="container is-max-desktop" >
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Benchmark Construction and Offline Evaluation Model Training.</h2>
-
-
-      </div>
-    </div>
-
-    <div class="columns is-centered">
-    
-      <div class="content has-text-centered" style="margin-top: 1cm;">
-        <img src="./static/images/pipeline.png" alt="pipeline" width="600" height="400">
-      </div>
-    </div>
-    
-    
-  </div>
- 
-  <div class="columns is-centered">
-      <div class="content has-text-centered" style="margin-top: 1cm;">
-        <img src="./static/images/eval_acc.png" alt="pipeline" width="1400" height="1200">
-      </div>
-    </div>
-    
-    <div class="hero-body">
-      <h2 class="has-text-justified" style="margin-top: -1cm;">
-      <p class="has-text-centered"><b>Evaluation Accuracy Comparison.</b><br>Our dedicated evaluation model demonstrates a significant improvement in evaluation accuracy across all test points compared to the commonly used offline evaluation VLM, Qwen2.5-VL-72b.</p>
-      </h2>
-    </div>
-
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop" >
-
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h4 class="title is-3">English Short Prompt Evaluation</h4>
-      </div>
-    </div>
-    <div class="columns is-centered">
-      <div class="content has-text-centered" style="margin-top: 1cm;">
-        <img src="./static/images/en_short.png" alt="pipeline" >
-      </div>
-    </div>
-    
-<div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h4 class="title is-3">English Long Prompt Evaluation</h4>
-      </div>
-    </div>
-    <div class="columns is-centered">
-      <div class="content has-text-centered" style="margin-top: 1cm;">
-        <img src="./static/images/en_long.png" alt="pipeline" >
-      </div>
-    </div>
-    
-    
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h4 class="title is-3">Chinese Short Prompt Evaluation</h4>
-      </div>
-    </div>
-    <div class="columns is-centered">
-      <div class="content has-text-centered" style="margin-top: 1cm;">
-        <img src="./static/images/zh_short.png" alt="pipeline" >
-      </div>
-    </div>
-    
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h4 class="title is-3">Chinese Long Prompt Evaluation</h4>
-      </div>
-    </div>
-    <div class="columns is-centered">
-      <div class="content has-text-centered" style="margin-top: 1cm;">
-        <img src="./static/images/zh_long.png" alt="pipeline" >
-      </div>
-    </div>
-  </div>
-  </div>
-  
-  
-    
-
-
-</section>
-
-
-      
-
-<section class="section" id="BibTeX">
+<section class="section research-section research-section-tinted" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>
@@ -405,5 +342,7 @@
     </code></pre>
   </div>
 </section>
+</main>
 
-</body></html>
+</body>
+</html>
