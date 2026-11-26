@@ -51,12 +51,6 @@
 
 Please leave us a star ⭐ if you find our benchmark helpful.
 
-- [2026/06] 🔥🔥  We are excited to see **NVIDIA** adopt our benchmark in [Cosmos 3: Omnimodal World Models for Physical AI](https://arxiv.org/pdf/2606.02800) and [APE: Agentic Prompt Enhancer for Image Generation and Editing](https://arxiv.org/pdf/2606.00204). Many thanks to all the contributors!
-
-- [2026/04] 🔥🔥  We are excited to see **NVIDIA** & **Harvard** & **University of Toronto** adopt our benchmark in [Test-time scaling of diffusions with flow maps](https://arxiv.org/pdf/2511.22688). Many thanks to all the contributors!
-
-- [2026/03] 🔥🔥  We are excited to see **PKU** & **ByteDance** **Seed** adopt our benchmark in [Enhancing Spatial Understanding in Image Generation via Reward Modeling](https://arxiv.org/pdf/2602.24233). Many thanks to all the contributors!
-
 - [2026/02] 🔥🔥  **GPT-4o-1.5**, **Seedream-4.5**, and **FLUX.2-(klein/pro/flex/max)** are added to all 🏅Leaderboard.
 
 - [2025/11] 🔥🔥 **Nano Banana Pro**, **FLUX.2-dev** and **Z-Image** are added to all 🏅Leaderboard.
@@ -74,8 +68,16 @@ Please leave us a star ⭐ if you find our benchmark helpful.
 - [2025/9] 🔥🔥 We release **all generated images from the T2I models** evaluated in our UniGenBench on [UniGenBench-Eval-Images](https://huggingface.co/datasets/CodeGoat24/UniGenBench-Eval-Images). Feel free to use any evaluation model that is convenient and suitable for you to assess and compare the performance of your models.
 - [2025/8] 🔥🔥 We release [paper](https://arxiv.org/pdf/2508.20751), [project page](https://codegoat24.github.io/UnifiedReward/Pref-GRPO), and UniGenBench 🏅[Leaderboard (**English**)](https://huggingface.co/spaces/CodeGoat24/UniGenBench_Leaderboard).
 
+### 😊 **Awesome Works using UniGenBench**
 
-
+- **NVIDIA** | [Nemotron-Labs-VisualCreation: Pixel as Code for Agentic Visual Creation](https://arxiv.org/abs/2611.31358)
+- **NVIDIA** | [Cosmos 3: Omnimodal World Models for Physical AI](https://arxiv.org/abs/2606.02800) [![Cosmos repository stars](https://img.shields.io/github/stars/NVIDIA/cosmos?label=Cosmos%20repo)](https://github.com/NVIDIA/cosmos)
+- **NVIDIA & University of Michigan** | [APE: Agentic Prompt Enhancer for Image Generation and Editing](https://arxiv.org/abs/2606.00204)
+- **NVIDIA, Harvard, University of Toronto, and collaborators** | [Test-time Scaling of Diffusions with Flow Maps](https://arxiv.org/abs/2511.22688)
+- **Meta & Simon Fraser University** | [Omni-Diffusion-Distill: Few-Step Distillation of Unified Multimodal Diffusion Large Language Models](https://arxiv.org/abs/2610.10990)
+- **Kling AI Research & Tsinghua University** | [UNO: Steering Visual Generation in Unified Multimodal Models with Understanding Supervision](https://arxiv.org/abs/2605.05781)
+- **ByteDance Seed & Peking University** | [SpatialScore: Enhancing Spatial Understanding in Image Generation via Reward Modeling](https://arxiv.org/abs/2602.24233)
+- **Alpha-VLLM** | [Lumina-DiMOO: An Omni Diffusion Large Language Model for Multi-Modal Generation and Understanding](https://arxiv.org/abs/2510.06308) [![GitHub stars](https://img.shields.io/github/stars/Alpha-VLLM/Lumina-DiMOO)](https://github.com/Alpha-VLLM/Lumina-DiMOO)
 
 ## Introduction
 
