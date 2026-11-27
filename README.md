@@ -78,6 +78,12 @@ Please leave us a star ⭐ if you find our benchmark helpful.
 - **Kling AI Research & Tsinghua University** | [UNO: Steering Visual Generation in Unified Multimodal Models with Understanding Supervision](https://arxiv.org/abs/2605.05781)
 - **ByteDance Seed & Peking University** | [SpatialScore: Enhancing Spatial Understanding in Image Generation via Reward Modeling](https://arxiv.org/abs/2602.24233)
 - **Alpha-VLLM** | [Lumina-DiMOO: An Omni Diffusion Large Language Model for Multi-Modal Generation and Understanding](https://arxiv.org/abs/2510.06308) [![GitHub stars](https://img.shields.io/github/stars/Alpha-VLLM/Lumina-DiMOO)](https://github.com/Alpha-VLLM/Lumina-DiMOO)
+- **Shanghai AI Lab** | [Intern Lumina U2: A Multi-Codebook Diffusion Large Language Model for Omni-Visual Understanding and Image Generation](https://arxiv.org/abs/2610.20818)
+- **Tencent, SJTU, XJTU** | [FAIL: Flow Matching Adversarial Imitation Learning for Image Generation](https://arxiv.org/abs/2602.12155)
+- **UMD, Hugging Face** | [Flash-BoN: Instant Drafts for Inference-Time Scaling in Diffusion Models](https://arxiv.org/abs/2607.04461) (ECCV 2026)
+- **Baidu, NTU, THU** | [SLAS: Power Reinforcement Post-Training of Text-to-Image Models with Super-Linear Advantage Shaping](https://arxiv.org/abs/2605.10937)
+- **ECNU, UM, ZJU, NJU** | [LADR: Locality-Aware Dynamic Rescue for Efficient Text-to-Image Generation with Diffusion Large Language Models](https://aclanthology.org/2026.acl-long.1251/) (ACL 2026)
+- **Shanghai AI Lab, SII, THU, USTC** | [CapRL++: Unified Reinforcement Learning with Verifiable Rewards for Dense Image and Video Captioning](https://arxiv.org/abs/2606.09393) [![CapRL repository stars](https://img.shields.io/github/stars/InternLM/CapRL?label=CapRL%20repo)](https://github.com/InternLM/CapRL)
 
 ## Introduction
 
